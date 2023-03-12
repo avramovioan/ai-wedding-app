@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Tab } from "@headlessui/react";
 
 function classNames(...classes: any[]) {
@@ -13,15 +12,15 @@ type POST = {
   shareCount: number;
 };
 
-function Tabs() {
-  const [categories] = useState<{
-    Recent: POST[];
-    Popular: POST[];
-    Trending: POST[];
-  }>({
-    Recent: [],
-    Popular: [],
-    Trending: [
+type TabObj = {
+  name: string;
+  posts: POST[];
+};
+
+const tabs: TabObj[] = [
+  {
+    name: "test",
+    posts: [
       // {
       //   id: 1,
       //   title: 'Ask Me Anything: 10 answers to your questions about coffee',
@@ -37,15 +36,55 @@ function Tabs() {
       //   shareCount: 2,
       // },
     ],
-  });
+  },
+  {
+    name: "test2",
+    posts: [
+      // {
+      //   id: 1,
+      //   title: 'Ask Me Anything: 10 answers to your questions about coffee',
+      //   date: '2d ago',
+      //   commentCount: 9,
+      //   shareCount: 5,
+      // },
+      // {
+      //   id: 2,
+      //   title: "The worst advice we've ever heard about coffee",
+      //   date: '4d ago',
+      //   commentCount: 1,
+      //   shareCount: 2,
+      // },
+    ],
+  },
+  {
+    name: "test3",
+    posts: [
+      // {
+      //   id: 1,
+      //   title: "Ask Me Anything: 10 answers to your questions about coffee",
+      //   date: "2d ago",
+      //   commentCount: 9,
+      //   shareCount: 5,
+      // },
+      // {
+      //   id: 2,
+      //   title: "The worst advice we've ever heard about coffee",
+      //   date: "4d ago",
+      //   commentCount: 1,
+      //   shareCount: 2,
+      // },
+    ],
+  },
+];
 
+export default function Tabs() {
   return (
     <div className="w-full max-w-md px-2 py-16 sm:px-0">
       <Tab.Group>
         <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
-          {Object.keys(categories).map((category) => (
+          {tabs.map((tab) => (
             <Tab
-              key={category}
+              key={tab.name}
               className={({ selected }) =>
                 classNames(
                   "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
@@ -56,12 +95,12 @@ function Tabs() {
                 )
               }
             >
-              {category}
+              {tab.name}
             </Tab>
           ))}
         </Tab.List>
         <Tab.Panels className="mt-2">
-          {Object.values(categories).map((posts, idx) => (
+          {tabs.map((tab, idx) => (
             <Tab.Panel
               key={idx}
               className={classNames(
@@ -70,7 +109,7 @@ function Tabs() {
               )}
             >
               <ul>
-                {posts.map((post) => (
+                {tab.posts.map((post) => (
                   <li
                     key={post.id}
                     className="relative rounded-md p-3 hover:bg-gray-100"
@@ -86,14 +125,6 @@ function Tabs() {
                       <li>&middot;</li>
                       <li>{post.shareCount} shares</li>
                     </ul>
-
-                    <a
-                      href="#"
-                      className={classNames(
-                        "absolute inset-0 rounded-md",
-                        "ring-blue-400 focus:z-10 focus:outline-none focus:ring-2"
-                      )}
-                    />
                   </li>
                 ))}
               </ul>
@@ -104,4 +135,3 @@ function Tabs() {
     </div>
   );
 }
-export default Tabs;
