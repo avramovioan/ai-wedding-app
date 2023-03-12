@@ -8,28 +8,22 @@ function Main() {
   const [showInvitation, setShowInvitation] = useState(true);
 
   return (
-    <div
-      //style={{ backgroundImage: `url(${background})`}}
-      className="flex h-full flex-col bg-gradient-to-tr from-green-300 via-green-800 to-black"
-    >
-      <div className="flex flex-row">
-        <div className="flex-1">
-          <button className="text-1xl m-2 flex p-2 text-white md:p-3 md:text-2xl">
-            <p>RSVP</p>
-            <span className="relative flex h-3 w-3">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-              <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
-            </span>
-          </button>
-        </div>
-        <div className="flex-1">
-          <button
-            className="m-2 p-2 text-sm font-bold text-white md:p-3 md:text-2xl"
-            onClick={() => setShowInvitation(true)}
-          >
-            Покажи поканата
-          </button>
-        </div>
+    <div className="flex h-full flex-col bg-gradient-to-tr from-green-300 via-green-800 to-black">
+      <div className="flex flex-row justify-between">
+        <button className="text-1xl m-2 flex p-2 text-white md:p-3 md:text-2xl">
+          <p>RSVP</p>
+          <span className="relative flex h-3 w-3">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+            <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+          </span>
+        </button>
+
+        <button
+          className="m-2 p-2 text-sm font-bold text-white md:p-3 md:text-2xl"
+          onClick={() => setShowInvitation(true)}
+        >
+          Покажи поканата
+        </button>
       </div>
 
       <div className="mt-10">
@@ -50,7 +44,11 @@ function Main() {
         leaveFrom="opacity-100"
         leaveTo="opacity-0"
       >
-        <InvitationModal onClose={setShowInvitation}></InvitationModal>
+        <InvitationModal
+          onClose={() => {
+            setShowInvitation(false);
+          }}
+        ></InvitationModal>
       </Transition>
     </div>
   );
