@@ -9,8 +9,27 @@ export default function Timer(props: { weddingDate: Date }) {
   const secondsWord = seconds !== 1 ? "секунди" : "секунда";
 
   return (
-    <div className="text-1xl p-2 text-center text-white md:text-5xl">
-      {`${days} ${daysWord} : ${hours} ${hoursWord} : ${minutes} ${minutesWord} : ${seconds} ${secondsWord}`}
+    <div className="text-1xl flex justify-center p-2 text-center text-white sm:text-2xl md:text-5xl">
+      <div className="flex-column px-2">
+        <div>{days}</div>
+        <div>{daysWord}</div>
+      </div>
+      <div className="flex-column px-2">
+        <div>{hours}</div>
+        <div>{hoursWord}</div>
+      </div>
+      <div className="flex-column px-2">
+        <div>{minutes}</div>
+        <div>{minutesWord}</div>
+      </div>
+      <div className="flex-column px-2">
+        <div>{seconds}</div>
+        <div>{secondsWord}</div>
+      </div>
     </div>
   );
+}
+
+{
+  /* {`${days} ${daysWord} : ${hours} ${hoursWord} : ${minutes} ${minutesWord} : ${seconds} ${secondsWord}`} */
 }

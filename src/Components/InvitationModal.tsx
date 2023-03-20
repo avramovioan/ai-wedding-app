@@ -10,7 +10,7 @@ function InvitationModal(props: { onClose: () => void }) {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4">
       <div
-        className="flex flex-col m-2"
+        className="m-2 flex flex-col"
         style={{
           width: size,
           height: (size + 64) * 1.3879,
@@ -18,7 +18,7 @@ function InvitationModal(props: { onClose: () => void }) {
       >
         <button
           onClick={props.onClose}
-          className="self-end text-2xl font-bold leading-none text-slate-300 duration-150 hover:scale-150"
+          className="duration-120 self-end text-2xl font-bold leading-none text-slate-300 hover:scale-125"
         >
           x
         </button>
@@ -28,7 +28,7 @@ function InvitationModal(props: { onClose: () => void }) {
         <a
           href="../invitation.pdf"
           download={true}
-          className="text-1xl font-semibold text-slate-300 duration-150 ease-linear hover:scale-110 md:text-2xl"
+          className="text-1xl font-semibold text-slate-300 duration-150  hover:scale-110 md:text-2xl"
           type="button"
         >
           Свали PDF
