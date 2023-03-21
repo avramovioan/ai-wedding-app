@@ -9,20 +9,20 @@ export default function Timer(props: { weddingDate: Date }) {
   const secondsWord = seconds !== 1 ? "секунди" : "секунда";
 
   return (
-    <div className="text-1xl flex justify-center p-2 text-center text-white sm:text-2xl md:text-5xl">
-      <div className="flex-column px-2">
+    <div className="text-1xl flex justify-center text-center text-white sm:text-2xl md:text-3xl">
+      <div className="flex-column mx-4">
         <div>{days}</div>
         <div>{daysWord}</div>
       </div>
-      <div className="flex-column px-2">
+      <div className="flex-column mx-4">
         <div>{hours}</div>
         <div>{hoursWord}</div>
       </div>
-      <div className="flex-column px-2">
+      <div className="flex-column mx-4">
         <div>{minutes}</div>
         <div>{minutesWord}</div>
       </div>
-      <div className="flex-column px-2">
+      <div className="flex-column mx-4">
         <div>{seconds}</div>
         <div>{secondsWord}</div>
       </div>

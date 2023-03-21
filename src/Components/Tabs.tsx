@@ -1,4 +1,7 @@
 import { Tab } from "@headlessui/react";
+import rings from "../rings.svg";
+import wedding_location from "../wedding_location.svg";
+import schedule from "../schedule.svg";
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
@@ -14,31 +17,34 @@ type POST = {
 
 type TabObj = {
   name: string;
+  icon: string;
   posts: POST[];
 };
 
 const tabs: TabObj[] = [
   {
     name: "test",
+    icon: schedule,
     posts: [
-      // {
-      //   id: 1,
-      //   title: 'Ask Me Anything: 10 answers to your questions about coffee',
-      //   date: '2d ago',
-      //   commentCount: 9,
-      //   shareCount: 5,
-      // },
-      // {
-      //   id: 2,
-      //   title: "The worst advice we've ever heard about coffee",
-      //   date: '4d ago',
-      //   commentCount: 1,
-      //   shareCount: 2,
-      // },
+      {
+        id: 1,
+        title: "Ask Me Anything: 10 answers to your questions about coffee",
+        date: "2d ago",
+        commentCount: 9,
+        shareCount: 5,
+      },
+      {
+        id: 2,
+        title: "The worst advice we've ever heard about coffee",
+        date: "4d ago",
+        commentCount: 1,
+        shareCount: 2,
+      },
     ],
   },
   {
     name: "test2",
+    icon: rings,
     posts: [
       // {
       //   id: 1,
@@ -58,6 +64,7 @@ const tabs: TabObj[] = [
   },
   {
     name: "test3",
+    icon: wedding_location,
     posts: [
       // {
       //   id: 1,
@@ -79,24 +86,27 @@ const tabs: TabObj[] = [
 
 export default function Tabs() {
   return (
-    <div className="w-full max-w-md px-2 py-16 sm:px-0">
-      <Tab.Group>
-        <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+    <div className="w-full max-w-5xl py-6 sm:px-0">
+      <Tab.Group defaultIndex={1}>
+        <Tab.List className="flex justify-between">
           {tabs.map((tab) => (
-            <Tab
-              key={tab.name}
-              className={({ selected }) =>
-                classNames(
-                  "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
-                  "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
-                  selected
-                    ? "bg-white shadow"
-                    : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
-                )
-              }
-            >
-              {tab.name}
-            </Tab>
+            <div className="mx-8 md:mx-16">
+              <Tab
+                key={tab.name}
+                className={({ selected }) =>
+                  classNames(
+                    "text-1xl flex justify-center rounded-lg  py-2.5",
+                    selected
+                      ? "animate-[bounce_2s_ease_infinite]"
+                      : "duration-300 hover:-translate-y-3.5"
+                  )
+                }
+              >
+                <div className="w-11 md:w-16">
+                  <img className="h-full w-full" src={tab.icon} />
+                </div>
+              </Tab>
+            </div>
           ))}
         </Tab.List>
         <Tab.Panels className="mt-2">
@@ -104,7 +114,7 @@ export default function Tabs() {
             <Tab.Panel
               key={idx}
               className={classNames(
-                "rounded-xl bg-white p-3",
+                "rounded-xl p-3",
                 "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
               )}
             >
@@ -135,3 +145,5 @@ export default function Tabs() {
     </div>
   );
 }
+
+//"text-blue-100 hover:bg-white/[0.12] hover:text-white"
