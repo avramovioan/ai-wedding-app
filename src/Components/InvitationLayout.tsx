@@ -1,13 +1,20 @@
 import { Transition } from "@headlessui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import InvitationModal from "./InvitationModal";
 import us from "../us5.jpg";
+import invitationIcon from "../invitation-icon.svg";
 
 export default function InvitationLayout() {
-  const [showInvitation, setShowInvitation] = useState(true);
+  const [showInvitation, setShowInvitation] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowInvitation(true);
+    }, 750);
+  }, []);
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <div className="h-96 w-full md:h-[37rem]">
         <img
           className="h-full w-full transform object-cover object-[50%_59%]"
@@ -19,7 +26,12 @@ export default function InvitationLayout() {
           className="m-2 p-2 text-sm font-bold italic text-white md:p-3 md:text-2xl"
           onClick={() => setShowInvitation(true)}
         >
-          Покажи поканата
+          <div className="relative h-14 w-14">
+            <img className="h-full w-full " src={invitationIcon} />
+            <div className="absolute top-0 animate-[ping_2s_ease_infinite]">
+              <img className="h-full w-full " src={invitationIcon} />
+            </div>
+          </div>
         </button>
 
         <button className="text-1xl m-2 flex p-2 text-white md:p-3 md:text-2xl">

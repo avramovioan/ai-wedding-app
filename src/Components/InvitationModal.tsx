@@ -8,7 +8,7 @@ function InvitationModal(props: { onClose: () => void }) {
   const size = Math.min(width, (height - 64) / 1.3879) - spacing;
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4">
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4">
       <div
         className="m-2 flex flex-col"
         style={{

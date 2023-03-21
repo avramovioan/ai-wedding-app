@@ -90,23 +90,22 @@ export default function Tabs() {
       <Tab.Group defaultIndex={1}>
         <Tab.List className="flex justify-between">
           {tabs.map((tab) => (
-            <div className="mx-8 md:mx-16">
-              <Tab
-                key={tab.name}
-                className={({ selected }) =>
-                  classNames(
-                    "text-1xl flex justify-center rounded-lg  py-2.5",
-                    selected
-                      ? "animate-[bounce_2s_ease_infinite]"
-                      : "duration-300 hover:-translate-y-3.5"
-                  )
-                }
-              >
-                <div className="w-11 md:w-16">
-                  <img className="h-full w-full" src={tab.icon} />
-                </div>
-              </Tab>
-            </div>
+            <Tab
+              key={tab.name}
+              as="div"
+              className={({ selected }) =>
+                classNames(
+                  "text-1xl	 mx-8 flex justify-center rounded-lg py-2.5 drop-shadow-[0_100px_100px_rgba(0,0,0,0.25)] hover:cursor-pointer md:mx-16  ",
+                  selected
+                    ? "animate-[bounce_2s_ease_infinite]"
+                    : "duration-300 hover:-translate-y-3.5"
+                )
+              }
+            >
+              <div className=" w-11 md:w-16">
+                <img className="h-full w-full" src={tab.icon} />
+              </div>
+            </Tab>
           ))}
         </Tab.List>
         <Tab.Panels className="mt-2">
