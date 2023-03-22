@@ -95,10 +95,10 @@ export default function Tabs() {
               as="div"
               className={({ selected }) =>
                 classNames(
-                  "text-1xl	 mx-8 flex justify-center rounded-lg py-2.5 drop-shadow-[0_100px_100px_rgba(0,0,0,0.25)] hover:cursor-pointer md:mx-16  ",
+                  "text-1xl mx-8 flex justify-center rounded-lg py-2.5 hover:cursor-pointer md:mx-16  ",
                   selected
-                    ? "animate-[bounce_2s_ease_infinite]"
-                    : "duration-300 hover:-translate-y-3.5"
+                    ? "scale-125 border-b-2 border-b-amber-500"
+                    : "duration-500 hover:scale-125 hover:border-b-2 hover:border-b-amber-500"
                 )
               }
             >

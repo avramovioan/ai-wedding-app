@@ -4,7 +4,7 @@ import Timer from "./Timer";
 
 function Main() {
   return (
-    <div className="flex h-full flex-col overflow-auto bg-gradient-to-tr from-green-300 via-green-800 to-black ">
+    <div className="flex h-full flex-col  overflow-auto bg-gradient-to-r from-[rgb(56,61,60)] via-[rgb(46,61,56)] to-[#1d2e28]  ">
       <InvitationLayout />
       <div className="mt-4">
         <fieldset className="border-t border-slate-200">
@@ -22,3 +22,5 @@ function Main() {
 }
 
 export default Main;
+
+//bg-[#1d2e28]

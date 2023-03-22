@@ -9,22 +9,22 @@ export default function Timer(props: { weddingDate: Date }) {
   const secondsWord = seconds !== 1 ? "секунди" : "секунда";
 
   return (
-    <div className="text-1xl flex justify-center text-center text-white sm:text-2xl md:text-3xl">
-      <div className="flex-column mx-4">
-        <div>{days}</div>
-        <div>{daysWord}</div>
+    <div className="text-1xl flex justify-center text-center text-white sm:text-2xl md:text-5xl">
+      <div className="flex-column mx-2 p-2  md:mx-4">
+        <div className="font-mono">{days}</div>
+        <div className="font-mono text-sm uppercase">{daysWord}</div>
       </div>
-      <div className="flex-column mx-4">
-        <div>{hours}</div>
-        <div>{hoursWord}</div>
+      <div className="flex-column mx-2 p-2  md:mx-4">
+        <div className="font-mono">{hours}</div>
+        <div className="font-mono text-sm uppercase">{hoursWord}</div>
       </div>
-      <div className="flex-column mx-4">
-        <div>{minutes}</div>
-        <div>{minutesWord}</div>
+      <div className="flex-column mx-2 p-2  md:mx-4">
+        <div className="font-mono">{minutes}</div>
+        <div className="font-mono text-sm uppercase">{minutesWord}</div>
       </div>
-      <div className="flex-column mx-4">
-        <div>{seconds}</div>
-        <div>{secondsWord}</div>
+      <div className="flex-column mx-2 p-2  md:mx-4">
+        <div className="font-mono">{seconds}</div>
+        <div className="font-mono text-sm uppercase">{secondsWord}</div>
       </div>
     </div>
   );

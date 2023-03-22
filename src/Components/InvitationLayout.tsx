@@ -7,11 +7,11 @@ import invitationIcon from "../invitation-icon.svg";
 export default function InvitationLayout() {
   const [showInvitation, setShowInvitation] = useState(false);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowInvitation(true);
-    }, 750);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowInvitation(true);
+  //   }, 750);
+  // }, []);
 
   return (
     <div className="relative z-50">
@@ -23,15 +23,13 @@ export default function InvitationLayout() {
       </div>
       <div className="absolute top-0 flex w-full flex-row justify-between">
         <button
-          className="m-2 p-2 text-sm font-bold italic text-white md:p-3 md:text-2xl"
+          className="m-2 content-center rounded-xl p-2 text-sm font-bold italic text-white md:px-3 md:text-xl"
           onClick={() => setShowInvitation(true)}
         >
-          <div className="relative h-14 w-14">
+          <div className="relative h-10 w-10 duration-300 hover:scale-125 md:h-14 md:w-14">
             <img className="h-full w-full " src={invitationIcon} />
-            <div className="absolute top-0 animate-[ping_2s_ease_infinite]">
-              <img className="h-full w-full " src={invitationIcon} />
-            </div>
           </div>
+          {/* <p>Покана</p> */}
         </button>
 
         <button className="text-1xl m-2 flex p-2 text-white md:p-3 md:text-2xl">
