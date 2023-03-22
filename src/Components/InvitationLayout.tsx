@@ -23,7 +23,7 @@ export default function InvitationLayout() {
       </div>
       <div className="absolute top-0 flex w-full flex-row justify-between">
         <button
-          className="m-2 content-center rounded-xl p-2 text-sm font-bold italic text-white duration-300 hover:scale-125 md:px-3 md:text-xl"
+          className="m-2 p-2 text-xl  italic text-white duration-300 hover:scale-125 md:px-3 md:text-2xl"
           onClick={() => setShowInvitation(true)}
         >
           {/* <div className="relative h-10 w-10 duration-300 hover:scale-125 md:h-14 md:w-14">
@@ -32,7 +32,7 @@ export default function InvitationLayout() {
           <p>Покана</p>
         </button>
 
-        <button className="text-1xl m-2 flex p-2 text-white md:p-3 md:text-2xl">
+        <button className="text-1xl m-2 flex p-2 text-white duration-300 hover:scale-125 md:p-3 md:text-2xl">
           <p className="italic">RSVP</p>
           <span className="relative flex h-3 w-3">
             <span className="absolute bottom-0 inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
