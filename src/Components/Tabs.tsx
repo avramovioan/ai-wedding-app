@@ -95,9 +95,9 @@ export default function Tabs() {
               as="div"
               className={({ selected }) =>
                 classNames(
-                  "text-1xl mx-8 flex justify-center rounded-lg py-2.5 hover:cursor-pointer md:mx-16  ",
+                  "text-1xl mx-8 rounded-lg py-2.5 hover:cursor-pointer md:mx-16",
                   selected
-                    ? "scale-125 border-b-2 border-b-amber-500"
+                    ? "scale-125 border-b-2 border-b-amber-500 focus:outline-none"
                     : "duration-500 hover:scale-125 hover:border-b-2 hover:border-b-amber-500"
                 )
               }
