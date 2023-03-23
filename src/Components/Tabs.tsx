@@ -95,9 +95,9 @@ export default function Tabs() {
               as="div"
               className={({ selected }) =>
                 classNames(
-                  "text-1xl mx-8 border-b-4 py-2.5 duration-500 hover:cursor-pointer md:mx-16",
+                  "text-1xl mx-8 border-b-4 py-2.5 duration-500 hover:cursor-pointer focus:outline-none focus:outline-0 md:mx-16",
                   selected
-                    ? "border-b-amber-500 focus:outline-none"
+                    ? "border-b-amber-500 "
                     : "border-b-white duration-500"
                 )
               }
