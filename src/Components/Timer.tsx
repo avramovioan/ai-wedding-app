@@ -9,22 +9,41 @@ export default function Timer(props: { weddingDate: Date }) {
   const secondsWord = seconds !== 1 ? "секунди" : "секунда";
 
   return (
-    <div className="text-1xl flex justify-center text-center text-white sm:text-2xl md:text-5xl">
-      <div className="flex-column mx-2 p-2  md:mx-4">
-        <div className="font-mono">{days}</div>
-        <div className="font-mono text-sm uppercase">{daysWord}</div>
+    <div className="text-1xl flex justify-center text-center text-white">
+      <div className="flex-column mx-2 p-2 md:mx-4">
+        <div className="font-serif text-xl sm:text-2xl md:text-[2.5rem]">
+          {days}
+        </div>
+        <div className="font-serif text-xl lowercase md:text-3xl">
+          {daysWord}
+        </div>
       </div>
+
       <div className="flex-column mx-2 p-2  md:mx-4">
-        <div className="font-mono">{hours}</div>
-        <div className="font-mono text-sm uppercase">{hoursWord}</div>
+        <div className=" font-serif text-xl sm:text-2xl md:text-[2.5rem]">
+          {hours}
+        </div>
+        <div className="font-serif text-xl lowercase md:text-3xl">
+          {hoursWord}
+        </div>
       </div>
+
       <div className="flex-column mx-2 p-2  md:mx-4">
-        <div className="font-mono">{minutes}</div>
-        <div className="font-mono text-sm uppercase">{minutesWord}</div>
+        <div className=" font-serif  text-xl sm:text-2xl md:text-[2.5rem]">
+          {minutes}
+        </div>
+        <div className="font-serif text-xl lowercase md:text-3xl">
+          {minutesWord}
+        </div>
       </div>
+
       <div className="flex-column mx-2 p-2  md:mx-4">
-        <div className="font-mono">{seconds}</div>
-        <div className="font-mono text-sm uppercase">{secondsWord}</div>
+        <div className="font-serif  text-xl sm:text-2xl md:text-[2.5rem]">
+          {seconds}
+        </div>
+        <div className="font-serif text-xl lowercase md:text-3xl">
+          {secondsWord}
+        </div>
       </div>
     </div>
   );

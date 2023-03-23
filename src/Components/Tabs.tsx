@@ -95,14 +95,14 @@ export default function Tabs() {
               as="div"
               className={({ selected }) =>
                 classNames(
-                  "text-1xl mx-8 rounded-lg py-2.5 hover:cursor-pointer md:mx-16",
+                  "text-1xl mx-8 border-b-4 py-2.5 duration-500 hover:cursor-pointer md:mx-16",
                   selected
-                    ? "scale-125 border-b-2 border-b-amber-500 focus:outline-none"
-                    : "duration-500 hover:scale-125 hover:border-b-2 hover:border-b-amber-500"
+                    ? "border-b-amber-500 focus:outline-none"
+                    : "border-b-white duration-500"
                 )
               }
             >
-              <div className=" w-11 md:w-16">
+              <div className="w-11 md:w-16">
                 <img className="h-full w-full" src={tab.icon} />
               </div>
             </Tab>
@@ -114,7 +114,7 @@ export default function Tabs() {
               key={idx}
               className={classNames(
                 "rounded-xl p-3",
-                "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+                "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none"
               )}
             >
               <ul>
