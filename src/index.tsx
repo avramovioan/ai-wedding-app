@@ -16,6 +16,7 @@ root.render(
         <Route path="/form" element={<InvitationForm />}></Route>
         <Route path="/" element={<App />}></Route>
         <Route path="*" element={<Navigate to={"/"} replace />}></Route>
+        <Route path="/invitation.pdf" />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

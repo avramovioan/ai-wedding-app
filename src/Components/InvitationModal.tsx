@@ -1,5 +1,6 @@
 import { ReactComponent as Invitation } from "../invitation.svg";
 import useWindowSize from "./useWindowSize";
+import { Link } from "react-router-dom";
 
 function InvitationModal(props: { onClose: () => void }) {
   const { height, width } = useWindowSize();
@@ -28,14 +29,17 @@ function InvitationModal(props: { onClose: () => void }) {
 
         <Invitation />
 
-        <a
+        {/* <a
           href="../invitation.pdf"
           download={true}
           className="text-1xl font-semibold text-slate-300 duration-150  hover:scale-110 md:text-2xl"
           type="button"
         >
           Свали PDF
-        </a>
+        </a> */}
+        <Link to="/invitation.pdf" target="_blank" download>
+          Свали PDF
+        </Link>
       </div>
     </div>
   );
