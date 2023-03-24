@@ -10,38 +10,38 @@ export default function Timer(props: { weddingDate: Date }) {
 
   return (
     <div className="text-1xl flex w-full justify-center text-center text-white md:w-[40rem]">
-      <div className="flex-column mx-2 p-1 md:mx-2 md:mr-4 md:w-full md:pr-1">
-        <div className="font-serif text-lg sm:text-2xl md:text-[2.5rem]">
+      <div className="flex-column mx-1 p-1 md:mx-2 md:mr-4 md:w-full md:pr-1">
+        <div className="font-serif text-xl sm:text-2xl md:text-[2.5rem]">
           {days}
         </div>
-        <div className="font-serif text-lg lowercase md:text-3xl">
+        <div className="font-serif text-xl lowercase md:text-3xl">
           {daysWord}
         </div>
       </div>
 
-      <div className="flex-column mx-2 p-1 md:mx-4  md:w-full">
-        <div className="font-serif text-lg sm:text-2xl md:text-[2.5rem]">
+      <div className="flex-column mx-1 p-1 md:mx-4  md:w-full">
+        <div className="font-serif text-xl sm:text-2xl md:text-[2.5rem]">
           {hours}
         </div>
-        <div className="font-serif text-lg lowercase md:text-3xl">
+        <div className="font-serif text-xl lowercase md:text-3xl">
           {hoursWord}
         </div>
       </div>
 
-      <div className="flex-column mx-2 p-1 md:mx-4   md:w-full">
-        <div className=" font-serif  text-lg sm:text-2xl md:text-[2.5rem]">
+      <div className="flex-column mx-1 p-1 md:mx-4 md:w-full">
+        <div className=" font-serif  text-xl sm:text-2xl md:text-[2.5rem]">
           {minutes}
         </div>
-        <div className="font-serif text-lg lowercase md:text-3xl">
+        <div className="font-serif text-xl lowercase md:text-3xl">
           {minutesWord}
         </div>
       </div>
 
-      <div className="flex-column mx-2 p-1 md:mx-4 md:w-full">
-        <div className="font-serif  text-lg sm:text-2xl md:text-[2.5rem]">
+      <div className="flex-column mx-1 p-1 md:mx-4 md:w-full">
+        <div className="font-serif  text-xl sm:text-2xl md:text-[2.5rem]">
           {seconds}
         </div>
-        <div className="font-serif text-lg lowercase md:text-3xl">
+        <div className="font-serif text-xl lowercase md:text-3xl">
           {secondsWord}
         </div>
       </div>

@@ -88,21 +88,21 @@ export default function Tabs() {
   return (
     <div className="w-full max-w-5xl py-6 sm:px-0">
       <Tab.Group defaultIndex={1}>
-        <Tab.List className="flex justify-between">
+        <Tab.List className="flex justify-center">
           {tabs.map((tab) => (
             <Tab
               key={tab.name}
               as="div"
               className={({ selected }) =>
                 classNames(
-                  "text-1xl mx-8 border-b-4 py-2.5 duration-500 hover:cursor-pointer focus:outline-none focus:outline-0 md:mx-16",
+                  "mx-8 border-b-4 py-2.5 text-xl duration-500 hover:cursor-pointer focus:outline-none focus:outline-0 md:mx-16",
                   selected
                     ? "border-b-amber-500 "
                     : "border-b-white duration-500"
                 )
               }
             >
-              <div className="w-11 md:w-16">
+              <div className="w-9 md:w-12">
                 <img className="h-full w-full" src={tab.icon} />
               </div>
             </Tab>
