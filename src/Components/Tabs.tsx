@@ -86,7 +86,7 @@ const tabs: TabObj[] = [
 
 export default function Tabs() {
   return (
-    <div className="w-full max-w-5xl py-6 sm:px-0">
+    <div className="w-full max-w-5xl py-3 sm:px-0 md:mt-4">
       <Tab.Group defaultIndex={1}>
         <Tab.List className="flex justify-center">
           {tabs.map((tab) => (
@@ -95,14 +95,14 @@ export default function Tabs() {
               as="div"
               className={({ selected }) =>
                 classNames(
-                  "mx-8 border-b-4 py-2.5 text-xl duration-500 hover:cursor-pointer focus:outline-none focus:outline-0 md:mx-16",
+                  "mx-8 border-b-4 py-2.5 text-xl duration-500 hover:cursor-pointer focus:outline-none focus:outline-0 md:mx-12 ",
                   selected
                     ? "border-b-amber-500 "
                     : "border-b-white duration-500"
                 )
               }
             >
-              <div className="w-9 md:w-12">
+              <div className="mx-1 w-8 hover:animate-[bounce_2s_ease-in_infinite] md:mx-6 md:w-12">
                 <img className="h-full w-full" src={tab.icon} />
               </div>
             </Tab>

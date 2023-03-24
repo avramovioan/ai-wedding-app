@@ -24,13 +24,33 @@ export default function InvitationLayout() {
       </div>
       <div className="absolute top-0 flex w-full flex-row justify-between">
         <button
-          className="m-2 text-xl font-bold italic text-white duration-300 hover:scale-125 md:px-3 md:text-2xl"
+          className="h-full text-xl font-bold italic text-white md:text-2xl"
           onClick={() => setShowInvitation(true)}
         >
-          {/* <div className="relative h-10 w-10 duration-300 hover:scale-125 md:h-14 md:w-14">
-            <img className="h-full w-full " src={invitationIcon} />
-          </div> */}
-          <div className="rounded-xl border border-white p-2 drop-shadow-xl">
+          <div className="rotate-180">
+            {/* <svg
+              height="100"
+              width="100"
+              className="duration-2 absolute animate-ping cursor-pointer opacity-75"
+              onClick={() => setShowInvitation(true)}
+            >
+              <circle cx="100" cy="100" r="100" fill="#487465"></circle>
+            </svg> */}
+            <svg height="100" width="100">
+              <defs>
+                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop
+                    offset="0%"
+                    stopColor="rgb(72,116,101)"
+                    stopOpacity="1"
+                  />
+                  <stop offset="100%" stopColor="#1d2e28" stopOpacity="1" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="100" fill="url(#grad3)"></circle>
+            </svg>
+          </div>
+          <div className="absolute top-[25px] left-0 rotate-[-45deg]">
             <p>Покана</p>
           </div>
         </button>
@@ -39,14 +59,46 @@ export default function InvitationLayout() {
           <img className="h-full w-full " src={rsvp} />
         </div> */}
 
-        <button className="text-1xl m-5 flex p-2 text-white duration-300 hover:scale-125 md:p-3 md:text-2xl">
+        <button
+          className="h-full text-xl font-bold italic text-white md:text-2xl"
+          onClick={() => setShowInvitation(true)}
+        >
+          <div className="-rotate-90">
+            {/* <svg
+              height="100"
+              width="100"
+              className="duration-2 absolute animate-ping cursor-pointer opacity-75"
+              onClick={() => setShowInvitation(true)}
+            >
+              <circle cx="100" cy="100" r="100" fill="#487465"></circle>
+            </svg> */}
+            <svg height="100" width="100">
+              <defs>
+                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop
+                    offset="0%"
+                    stopColor="rgb(72,116,101)"
+                    stopOpacity="1"
+                  />
+                  <stop offset="100%" stopColor="#1d2e28" stopOpacity="1" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="100" r="100" fill="url(#grad3)"></circle>
+            </svg>
+          </div>
+          <div className="absolute top-[35px] right-[-10px] rotate-[45deg]">
+            <p>Потвърди</p>
+          </div>
+        </button>
+
+        {/* <button className="m-5 flex rounded-lg border border-white p-2 text-xl font-bold text-white duration-300 hover:scale-125 md:p-3 md:text-2xl">
           <p className="italic">Потвърди</p>
 
           <span className="relative flex h-3 w-3">
             <span className="absolute bottom-0 inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
             <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
           </span>
-        </button>
+        </button> */}
       </div>
       <Transition
         show={showInvitation}
