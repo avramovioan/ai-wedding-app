@@ -19,8 +19,8 @@ export default function Timer(props: { weddingDate: Date }) {
         </div>
       </div>
 
-      <div className="flex-column mx-2 p-2  md:mx-4">
-        <div className=" font-serif text-xl sm:text-2xl md:text-[2.5rem]">
+      <div className="flex-column mx-2 p-2 md:mx-4">
+        <div className="font-serif text-xl sm:text-2xl md:text-[2.5rem]">
           {hours}
         </div>
         <div className="font-serif text-xl lowercase md:text-3xl">
