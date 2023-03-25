@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.13",
+    "@heroicons/react": "^2.0.16",
     "@m1st1ck/useasync": "^1.0.0",
     "@supabase/supabase-js": "^2.12.1",
     "@testing-library/jest-dom": "^5.16.5",

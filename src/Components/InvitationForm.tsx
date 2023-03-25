@@ -58,7 +58,7 @@ export default function InvitationForm() {
       alergies: null,
       is_coming: false,
       drink_choices: [],
-      is_child: false,
+      is_child: true,
       wants_vegetarian: false,
       wants_kid_menu: false,
     },

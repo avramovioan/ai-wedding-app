@@ -18,7 +18,7 @@ export default function InvitationLayout() {
     <div className="relative z-50">
       <div className="h-96 w-full md:h-[37rem]">
         <img
-          className="h-full w-full transform object-cover object-[50%_59%]"
+          className="h-full w-full transform object-cover object-[50%-60%]"
           src={us}
         />
       </div>
