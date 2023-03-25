@@ -1,7 +1,7 @@
 import { Listbox, Switch, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { DrinkData } from "../Types/DrinkData";
-import { UserDataWithDrinkData, UserData } from "../Types/UserData";
+import { UserDataWithDrinkAndFoodData, UserData } from "../Types/UserData";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
 export default function IndividualForm({
@@ -11,9 +11,11 @@ export default function IndividualForm({
 }: {
   drinks: DrinkData["Row"][];
   updateFormData(
-    getNext: (prev: UserDataWithDrinkData) => UserDataWithDrinkData
+    getNext: (
+      prev: UserDataWithDrinkAndFoodData
+    ) => UserDataWithDrinkAndFoodData
   ): void;
-  userData: UserDataWithDrinkData;
+  userData: UserDataWithDrinkAndFoodData;
 }) {
   const [hasAlergies, setHasAlergies] = useState(false);
   return (

@@ -1,13 +1,14 @@
 import { useAsync } from "@m1st1ck/useasync";
 import { useEffect, useState } from "react";
 import { getDrinks } from "../Services/drinkService";
+import { getFoods } from "../Services/foodService";
 import { DrinkData } from "../Types/DrinkData";
-import { UserDataWithDrinkData, UserData } from "../Types/UserData";
+import { UserDataWithDrinkAndFoodData, UserData } from "../Types/UserData";
 import IndividualForm from "./IndividualForm";
 
 export default function InvitationForm() {
   const [formData, setFormData] = useState<{
-    [userId: number]: UserDataWithDrinkData;
+    [userId: number]: UserDataWithDrinkAndFoodData;
   }>({});
 
   //const [drinks, setDrinks] = useState<DrinkData["Row"][]>([]);
@@ -15,11 +16,19 @@ export default function InvitationForm() {
   const [, getDrinksStatus, getDrinksResponse] = useAsync(getDrinks, {
     runOnMountArgs: [],
   });
+
   const drinks = getDrinksResponse || [];
+
+  const [, getFoodsStatus, getFoodsRespnse] = useAsync(getFoods, {
+    runOnMountArgs: [],
+  });
+  const foods = getFoodsRespnse || [];
 
   function updateFormData(id: number) {
     return (
-      getNext: (prev: UserDataWithDrinkData) => UserDataWithDrinkData
+      getNext: (
+        prev: UserDataWithDrinkAndFoodData
+      ) => UserDataWithDrinkAndFoodData
     ) => {
       setFormData((prev) => {
         return {
@@ -31,6 +40,7 @@ export default function InvitationForm() {
       });
     };
   }
+
   const users: UserData["Row"][] = [
     {
       id: 1,
@@ -39,8 +49,7 @@ export default function InvitationForm() {
       is_coming: false,
       drink_choices: [],
       is_child: false,
-      wants_vegetarian: false,
-      wants_kid_menu: false,
+      food_choice: null,
     },
     {
       id: 2,
@@ -49,8 +58,7 @@ export default function InvitationForm() {
       is_coming: false,
       drink_choices: [],
       is_child: false,
-      wants_vegetarian: false,
-      wants_kid_menu: false,
+      food_choice: null,
     },
     {
       id: 3,
@@ -59,16 +67,16 @@ export default function InvitationForm() {
       is_coming: false,
       drink_choices: [],
       is_child: true,
-      wants_vegetarian: false,
-      wants_kid_menu: false,
+      food_choice: null,
     },
   ];
 
   useEffect(() => {
     const drinks = getDrinksResponse || [];
+    const foods = getFoodsRespnse || [];
     setFormData(
       users.reduce<{
-        [userId: number]: UserDataWithDrinkData;
+        [userId: number]: UserDataWithDrinkAndFoodData;
       }>((acc, value) => {
         return {
           ...acc,
@@ -77,17 +85,18 @@ export default function InvitationForm() {
             drink_choices: value.drink_choices.map(
               (dr) => drinks.find((d) => d.id == dr)!
             ),
+            food_choice: foods.find((food) => food.id == value.id)!,
           },
         };
       }, {})
     );
-  }, [getDrinksResponse]);
+  }, [getDrinksResponse, getFoodsRespnse]);
 
   return (
     <div>
       <div className="flex min-h-screen flex-col items-center bg-gray-50 pt-6 sm:justify-center sm:pt-0">
         <div className="mt-6 w-full overflow-hidden px-6 py-4 sm:max-w-md">
-          {getDrinksStatus.loaded && (
+          {getDrinksStatus.loaded && getFoodsStatus.loaded && (
             <form
               onSubmit={(evt) => {
                 evt.preventDefault();
@@ -112,7 +121,9 @@ export default function InvitationForm() {
               </div>
             </form>
           )}
-          {getDrinksStatus.error && <div> Нещо се оплеска. </div>}
+          {(getDrinksStatus.error || getFoodsStatus.error) && (
+            <div> Нещо се оплеска. </div>
+          )}
         </div>
       </div>
     </div>

@@ -48,36 +48,56 @@ export interface Database {
           name?: string
         }
       }
+      food: {
+        Row: {
+          description: string
+          for_adult: boolean
+          for_child: boolean
+          id: number
+          name: string
+        }
+        Insert: {
+          description: string
+          for_adult?: boolean
+          for_child?: boolean
+          id?: number
+          name: string
+        }
+        Update: {
+          description?: string
+          for_adult?: boolean
+          for_child?: boolean
+          id?: number
+          name?: string
+        }
+      }
       user: {
         Row: {
           alergies: string | null
           drink_choices: number[]
+          food_choice: number | null
           id: number
           is_child: boolean
           is_coming: boolean
           name: string
-          wants_kid_menu: boolean
-          wants_vegetarian: boolean
         }
         Insert: {
           alergies?: string | null
           drink_choices: number[]
+          food_choice?: number | null
           id?: number
           is_child?: boolean
           is_coming?: boolean
           name: string
-          wants_kid_menu?: boolean
-          wants_vegetarian?: boolean
         }
         Update: {
           alergies?: string | null
           drink_choices?: number[]
+          food_choice?: number | null
           id?: number
           is_child?: boolean
           is_coming?: boolean
           name?: string
-          wants_kid_menu?: boolean
-          wants_vegetarian?: boolean
         }
       }
     }
