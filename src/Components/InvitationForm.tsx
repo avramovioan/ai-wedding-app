@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { getDrinks } from "../Services/drinkService";
 import { getFoods } from "../Services/foodService";
 import { DrinkData } from "../Types/DrinkData";
+import { FoodData } from "../Types/FoodData";
 import { UserDataWithDrinkAndFoodData, UserData } from "../Types/UserData";
 import IndividualForm from "./IndividualForm";
 
@@ -71,6 +72,15 @@ export default function InvitationForm() {
     },
   ];
 
+  function getDefaultFood(
+    user: UserData["Row"],
+    foods: FoodData["Row"][]
+  ): FoodData["Row"] {
+    return user.is_child
+      ? foods.find((f) => f.for_child)!
+      : foods.find((f) => !f.for_child)!;
+  }
+
   useEffect(() => {
     const drinks = getDrinksResponse || [];
     const foods = getFoodsRespnse || [];
@@ -85,7 +95,10 @@ export default function InvitationForm() {
             drink_choices: value.drink_choices.map(
               (dr) => drinks.find((d) => d.id == dr)!
             ),
-            food_choice: foods.find((food) => food.id == value.id)!,
+            food_choice:
+              value.food_choice === null
+                ? getDefaultFood(value, foods)
+                : foods.find((food) => food.id == value.id)!,
           },
         };
       }, {})
@@ -107,6 +120,11 @@ export default function InvitationForm() {
                 <IndividualForm
                   key={u.id}
                   drinks={drinks}
+                  foods={
+                    u.is_child
+                      ? foods.filter((f) => f.for_child)
+                      : foods.filter((f) => f.for_adult)
+                  }
                   updateFormData={updateFormData(u.id)}
                   userData={formData[u.id]}
                 />
