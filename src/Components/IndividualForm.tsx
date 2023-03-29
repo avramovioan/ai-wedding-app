@@ -187,7 +187,7 @@ export default function IndividualForm({
             htmlFor="name"
             className="undefined block text-sm font-medium text-white md:text-xl"
           >
-            Моля изброите алергиите си:
+            Моля избройте алергиите си:
           </label>
           <div className="flex flex-col items-start">
             <input

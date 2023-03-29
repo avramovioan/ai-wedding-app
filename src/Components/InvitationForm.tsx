@@ -165,7 +165,7 @@ export default function InvitationForm() {
                   userData={formData[u.id]}
                 />
               ))}
-              <div className="my-4 flex items-center justify-start">
+              <div className="mb-4 flex items-center justify-start">
                 <button
                   type="submit"
                   className="false inline-flex items-center rounded-md border border-transparent bg-amber-600 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out active:bg-gray-900 md:text-lg"
