@@ -3,6 +3,9 @@ import rings from "../rings.svg";
 import wedding_location from "../wedding_location.svg";
 import schedule from "../schedule.svg";
 
+import invitationIcon from "../invitation-icon.svg";
+import rsvp from "../rsvp.svg";
+
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
 }
@@ -141,6 +144,12 @@ export default function Tabs() {
           ))}
         </Tab.Panels>
       </Tab.Group>
+      {/* <div className="h-24 w-24">
+        <img src={invitationIcon} />
+      </div>
+      <div className="h-24 w-24">
+        <img src={rsvp} />
+      </div> */}
     </div>
   );
 }

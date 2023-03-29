@@ -44,7 +44,7 @@ export default function InvitationLayout() {
             <div className="relative h-full w-full ">
               <button
                 className="absolute bottom-[0.6rem] left-[5rem] text-lg italic text-white md:bottom-[1.8rem] md:left-[7.5rem] md:text-3xl"
-                onClick={() => setShowInvitation(true)}
+                onClick={() => setShowInvitationForm(true)}
               >
                 Потвърди
               </button>
