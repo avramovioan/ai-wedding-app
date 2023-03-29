@@ -24,7 +24,7 @@ export default function InvitationLayout() {
       <div className="absolute top-0 w-full overflow-hidden">
         <div className="relative h-24 w-full md:h-40">
           <div
-            className="absolute -top-[15.5rem] -left-[7rem] h-72 w-72 rounded-full 
+            className="absolute -top-[15.5rem] -left-[6.5rem] h-72 w-72 rounded-full 
                         bg-gradient-to-tr from-[rgb(72,116,101)] to-[#1d2e28] md:-top-[25rem] 
                         md:-left-[14rem] md:h-[30rem] md:w-[30rem] "
           >
@@ -38,7 +38,7 @@ export default function InvitationLayout() {
             </div>
           </div>
           <div
-            className={`absolute -top-[15.5rem] -right-[7rem] z-20 h-72 w-72 rounded-full bg-gradient-to-tl from-[rgb(72,116,101)] to-[#1d2e28] md:-top-[25rem] 
+            className={`absolute -top-[15.5rem] -right-[6.5rem] z-20 h-72 w-72 rounded-full bg-gradient-to-tl from-[rgb(72,116,101)] to-[#1d2e28] md:-top-[25rem] 
             md:-right-[14rem] md:h-[30rem] md:w-[30rem]`}
           >
             <div className="relative h-full w-full ">
