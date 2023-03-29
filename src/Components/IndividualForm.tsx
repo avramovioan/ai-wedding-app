@@ -22,11 +22,11 @@ export default function IndividualForm({
 }) {
   const [hasAlergies, setHasAlergies] = useState(false);
   return (
-    <div className="mt-10 border-t-4 border-t-gray-900">
+    <div className="my-2 max-h-full rounded-2xl border border-amber-500 p-2 drop-shadow-md">
       <div>
         <label
           htmlFor="name"
-          className="undefined block text-sm font-medium text-gray-700"
+          className="undefined block text-sm font-medium text-white md:text-2xl "
         >
           Име
         </label>
@@ -41,18 +41,18 @@ export default function IndividualForm({
             value={userData.name}
             type="text"
             name="name"
-            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            className="mt-1 block w-full rounded-md border-gray-300 p-2 text-sm shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 md:text-xl"
           />
         </div>
       </div>
       <div className="mt-4 flex justify-between">
         <label
           htmlFor="email"
-          className="undefined block text-sm font-medium text-gray-700"
+          className="undefined block text-sm font-medium  text-white  md:text-2xl"
         >
           Ще присъствам?
         </label>
-        <div className="flex flex-col">
+        <div className="flex flex-col justify-center">
           <Switch
             checked={userData.is_coming}
             onChange={() => {
@@ -62,7 +62,7 @@ export default function IndividualForm({
               });
             }}
             className={`${
-              userData.is_coming ? "bg-blue-600" : "bg-gray-200"
+              userData.is_coming ? "bg-amber-500" : "bg-black"
             } relative inline-flex h-6 w-11 items-center rounded-full`}
           >
             <span
@@ -75,7 +75,7 @@ export default function IndividualForm({
       </div>
       {!userData.is_child && (
         <div className="mt-4">
-          <label className="undefined block text-sm font-medium text-gray-700">
+          <label className="undefined block text-sm font-medium text-white md:text-2xl">
             С какво ще се напия:
           </label>
           <div className="flex flex-col items-start">
@@ -90,7 +90,12 @@ export default function IndividualForm({
               multiple
             >
               <div className="relative mt-1 min-w-full">
-                <Listbox.Button className="relative w-full  cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                <Listbox.Button
+                  className="relative w-full cursor-pointer 
+                rounded-lg bg-white py-2 pl-3 pr-10 text-left text-sm shadow-md focus:outline-none
+                 focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
+                  focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 md:text-xl"
+                >
                   <span className="block truncate">
                     {userData.drink_choices.length === 0
                       ? "Няма да пия нищо 😞"
@@ -100,7 +105,7 @@ export default function IndividualForm({
                   </span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <ChevronUpDownIcon
-                      className="h-5 w-5 text-gray-400"
+                      className="h-5 w-5 text-black"
                       aria-hidden="true"
                     />
                   </span>
@@ -116,7 +121,7 @@ export default function IndividualForm({
                       <Listbox.Option
                         key={drink.id}
                         className={({ active }) =>
-                          `relative cursor-pointer select-none py-2 pl-10 pr-4 ${
+                          `relative cursor-pointer select-none py-2 pl-10 pr-4 text-sm md:text-xl ${
                             active
                               ? "bg-amber-100 text-amber-900"
                               : "text-gray-900"
@@ -156,16 +161,16 @@ export default function IndividualForm({
       <div className="mt-4 flex justify-between">
         <label
           htmlFor="email"
-          className="undefined block text-sm font-medium text-gray-700"
+          className="undefined block text-sm font-medium text-white md:text-2xl "
         >
           Имам алергии:
         </label>
-        <div className="flex flex-col">
+        <div className="flex flex-col justify-center">
           <Switch
             checked={hasAlergies}
             onChange={setHasAlergies}
             className={`${
-              hasAlergies ? "bg-blue-600" : "bg-gray-200"
+              hasAlergies ? "bg-amber-500" : "bg-black"
             } relative inline-flex h-6 w-11 items-center rounded-full`}
           >
             <span
@@ -180,7 +185,7 @@ export default function IndividualForm({
         <div>
           <label
             htmlFor="name"
-            className="undefined block text-sm font-medium text-gray-700"
+            className="undefined block text-sm font-medium text-white md:text-xl"
           >
             Моля изброите алергиите си:
           </label>
@@ -195,14 +200,14 @@ export default function IndividualForm({
               value={userData.alergies || ""}
               type="text"
               name="name"
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="mt-1 block w-full rounded-md border-gray-300 p-2 text-sm shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 md:text-xl"
             />
           </div>
         </div>
       )}
 
       <div className="mt-4">
-        <label className="undefined block text-sm font-medium text-gray-700">
+        <label className="undefined block text-sm font-medium text-white md:text-2xl">
           Какво ще хапвам:
         </label>
         <div className="flex flex-col items-start">
@@ -216,7 +221,12 @@ export default function IndividualForm({
             }}
           >
             <div className="relative mt-1 min-w-full">
-              <Listbox.Button className="relative w-full  cursor-pointer rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+              <Listbox.Button
+                className="relative w-full cursor-pointer 
+              rounded-lg bg-white py-2 pl-3 pr-10 text-left text-sm shadow-md 
+              focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white
+               focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 md:text-xl"
+              >
                 <span className="block truncate">
                   {userData.food_choice === undefined
                     ? ""
@@ -235,12 +245,12 @@ export default function IndividualForm({
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
               >
-                <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                <Listbox.Options className="z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                   {foods.map((food) => (
                     <Listbox.Option
                       key={food.id}
                       className={({ active }) =>
-                        `relative cursor-pointer select-none py-2 pl-10 pr-4 ${
+                        `relative cursor-pointer select-none py-2 pl-10 pr-4 text-sm md:text-xl ${
                           active
                             ? "bg-amber-100 text-amber-900"
                             : "text-gray-900"

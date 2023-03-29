@@ -1,10 +1,7 @@
 import { Transition } from "@headlessui/react";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import InvitationModal from "./InvitationModal";
 import us from "../us5.jpg";
-import invitationIcon from "../invitation-icon.svg";
-import rsvp from "../rsvp.svg";
-import flower from "../flower.svg";
 
 export default function InvitationLayout() {
   const [showInvitation, setShowInvitation] = useState(false);
@@ -47,24 +44,6 @@ export default function InvitationLayout() {
               >
                 Потвърди
               </button>
-              <div>
-                <img
-                  src={flower}
-                  className="absolute -bottom-[0.5rem] left-[8.6rem] h-4 w-4  md:-bottom-[0.5rem] md:left-[14rem] md:h-6 md:w-6"
-                />
-                <img
-                  src={flower}
-                  className="absolute bottom-[1.5rem] left-[4rem] h-4 w-4 md:bottom-[3.6rem] md:left-[4rem] md:h-6 md:w-6"
-                />
-                <img
-                  src={flower}
-                  className="absolute bottom-0 left-[6rem] h-4 w-4 md:bottom-0 md:left-[10rem] md:h-6 md:w-6"
-                />
-                <img
-                  src={flower}
-                  className="absolute bottom-[1.6rem] left-[9.6rem] h-4 w-4 md:bottom-[3.6rem] md:left-[14.5rem] md:h-6 md:w-6"
-                />
-              </div>
             </div>
           </div>
 
@@ -95,3 +74,24 @@ export default function InvitationLayout() {
 
 //mix-blend-overlay
 //bg-gradient-to-tr from-green-700 to-purple-700
+
+{
+  /* <div>
+                <img
+                  src={flower}
+                  className="absolute -bottom-[0.5rem] left-[8.6rem] h-4 w-4  md:-bottom-[0.5rem] md:left-[14rem] md:h-6 md:w-6"
+                />
+                <img
+                  src={flower}
+                  className="absolute bottom-[1.5rem] left-[4rem] h-4 w-4 md:bottom-[3.6rem] md:left-[4rem] md:h-6 md:w-6"
+                />
+                <img
+                  src={flower}
+                  className="absolute bottom-0 left-[6rem] h-4 w-4 md:bottom-0 md:left-[10rem] md:h-6 md:w-6"
+                />
+                <img
+                  src={flower}
+                  className="absolute bottom-[1.6rem] left-[9.6rem] h-4 w-4 md:bottom-[3.6rem] md:left-[14.5rem] md:h-6 md:w-6"
+                />
+              </div> */
+}

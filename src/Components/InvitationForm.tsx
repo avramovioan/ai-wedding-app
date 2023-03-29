@@ -70,6 +70,42 @@ export default function InvitationForm() {
       is_child: true,
       food_choice: null,
     },
+    {
+      id: 4,
+      name: "Pesho",
+      alergies: null,
+      is_coming: false,
+      drink_choices: [],
+      is_child: true,
+      food_choice: null,
+    },
+    {
+      id: 5,
+      name: "Pesho",
+      alergies: null,
+      is_coming: false,
+      drink_choices: [],
+      is_child: true,
+      food_choice: null,
+    },
+    {
+      id: 6,
+      name: "Pesho",
+      alergies: null,
+      is_coming: false,
+      drink_choices: [],
+      is_child: true,
+      food_choice: null,
+    },
+    {
+      id: 7,
+      name: "Pesho",
+      alergies: null,
+      is_coming: false,
+      drink_choices: [],
+      is_child: true,
+      food_choice: null,
+    },
   ];
 
   function getDefaultFood(
@@ -107,8 +143,8 @@ export default function InvitationForm() {
 
   return (
     <div>
-      <div className="flex min-h-screen flex-col items-center bg-gray-50 pt-6 sm:justify-center sm:pt-0">
-        <div className="mt-6 w-full overflow-hidden px-6 py-4 sm:max-w-md">
+      <div className="flex flex-col items-center rounded-lg bg-[#1d2e28]">
+        <div className="h-[70rem] w-[18rem] overflow-y-scroll px-3 md:w-[35rem] md:px-6 md:py-2">
           {getDrinksStatus.loaded && getFoodsStatus.loaded && (
             <form
               onSubmit={(evt) => {
@@ -132,7 +168,7 @@ export default function InvitationForm() {
               <div className="mt-4 flex items-center justify-start">
                 <button
                   type="submit"
-                  className="false inline-flex items-center rounded-md border border-transparent bg-gray-900 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out active:bg-gray-900"
+                  className="false inline-flex items-center rounded-md border border-transparent bg-amber-600 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out active:bg-gray-900"
                 >
                   Потвърди
                 </button>
