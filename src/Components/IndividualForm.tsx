@@ -22,7 +22,7 @@ export default function IndividualForm({
 }) {
   const [hasAlergies, setHasAlergies] = useState(false);
   return (
-    <div className="my-2 max-h-full rounded-2xl border border-amber-500 p-2 drop-shadow-md">
+    <div className="mb-9 rounded-2xl border border-amber-500 p-2 drop-shadow-md">
       <div>
         <label
           htmlFor="name"

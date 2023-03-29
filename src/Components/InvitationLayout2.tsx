@@ -42,7 +42,7 @@ export default function InvitationLayout() {
           >
             <div className="relative h-full w-full ">
               <button
-                className="absolute bottom-[0.6rem] left-[5.3rem] z-20 text-lg italic text-white md:bottom-[1.8rem] md:left-[7.5rem] md:text-3xl"
+                className="absolute bottom-[0.6rem] left-[5.3rem] z-10 text-lg italic text-white md:bottom-[1.8rem] md:left-[7.5rem] md:text-3xl"
                 onClick={() => setShowInvitationForm(true)}
               >
                 Потвърди
@@ -50,7 +50,7 @@ export default function InvitationLayout() {
             </div>
           </div>
 
-          <div className="absolute -top-[8rem] -right-[2rem] z-10 h-36 w-36 animate-ping  rounded-full bg-gradient-to-tl from-[rgb(72,116,101)] to-[#1d2e28] md:-right-[4rem] md:-top-[11rem] md:h-[15rem] md:w-[15rem]"></div>
+          <div className="absolute -top-[8rem] -right-[2rem] h-36 w-36 animate-ping  rounded-full bg-gradient-to-tl from-[rgb(72,116,101)] to-[#1d2e28] md:-right-[4rem] md:-top-[11rem] md:h-[15rem] md:w-[15rem]"></div>
         </div>
       </div>
 

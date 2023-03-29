@@ -144,7 +144,7 @@ export default function InvitationForm() {
   return (
     <div>
       <div className="flex flex-col items-center rounded-lg bg-[#1d2e28]">
-        <div className="h-[70rem] w-[18rem] overflow-y-scroll px-3 md:w-[35rem] md:px-6 md:py-2">
+        <div className="w-full px-2 md:py-4">
           {getDrinksStatus.loaded && getFoodsStatus.loaded && (
             <form
               onSubmit={(evt) => {
@@ -165,10 +165,10 @@ export default function InvitationForm() {
                   userData={formData[u.id]}
                 />
               ))}
-              <div className="mt-4 flex items-center justify-start">
+              <div className="my-4 flex items-center justify-start">
                 <button
                   type="submit"
-                  className="false inline-flex items-center rounded-md border border-transparent bg-amber-600 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out active:bg-gray-900"
+                  className="false inline-flex items-center rounded-md border border-transparent bg-amber-600 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out active:bg-gray-900 md:text-lg"
                 >
                   Потвърди
                 </button>
