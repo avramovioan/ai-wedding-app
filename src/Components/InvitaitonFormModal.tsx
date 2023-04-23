@@ -11,7 +11,7 @@ export default function InvitationFormModal({
   const spacing = 16;
   const size = Math.min(width, (height - 64) / 1.3879) - spacing;
   return (
-    <div className="fixed inset-0 z-10 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4">
+    <div className="fixed inset-0 z-20 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4">
       <div
         className="flex flex-col"
         style={{

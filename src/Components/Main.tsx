@@ -1,13 +1,12 @@
 import InvitationLayout from "./InvitationLayout2";
 import Tabs from "./Tabs";
 import Timer from "./Timer";
-import branch from "../branch-white.svg";
 
 function Main() {
   return (
     <div className="flex h-full flex-col overflow-auto ">
       <InvitationLayout />
-      <div className="relative h-full overflow-hidden bg-gradient-to-tr from-[rgb(72,116,101)] to-[#1d2e28] ">
+      <div className="relative h-full bg-gradient-to-tr from-[rgb(72,116,101)] to-[#1d2e28] ">
         <div className="mt-4">
           <fieldset className="border-t border-slate-200">
             <legend className="mx-auto italic text-white">

@@ -5,6 +5,7 @@ import schedule from "../schedule.svg";
 
 import invitationIcon from "../invitation-icon.svg";
 import rsvp from "../rsvp.svg";
+import { useState } from "react";
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
@@ -22,6 +23,7 @@ type TabObj = {
   name: string;
   icon: string;
   posts: POST[];
+  index: number;
 };
 
 const tabs: TabObj[] = [
@@ -44,6 +46,7 @@ const tabs: TabObj[] = [
         shareCount: 2,
       },
     ],
+    index: 0,
   },
   {
     name: "test2",
@@ -64,6 +67,7 @@ const tabs: TabObj[] = [
       //   shareCount: 2,
       // },
     ],
+    index: 1,
   },
   {
     name: "test3",
@@ -84,13 +88,14 @@ const tabs: TabObj[] = [
       //   shareCount: 2,
       // },
     ],
+    index: 2,
   },
 ];
-
 export default function Tabs() {
+  const [selectedIndex, setSelectedIndex] = useState(1);
   return (
     <div className="w-full max-w-5xl py-3 sm:px-0 md:mt-4">
-      <Tab.Group defaultIndex={1}>
+      <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
         <Tab.List className="flex justify-center">
           {tabs.map((tab) => (
             <Tab
@@ -99,13 +104,18 @@ export default function Tabs() {
               className={({ selected }) =>
                 classNames(
                   "mx-8 border-b-4 py-2.5 text-xl duration-500 hover:cursor-pointer focus:outline-none focus:outline-0 md:mx-12 ",
-                  selected
-                    ? "border-b-amber-500 "
-                    : "border-b-white duration-500"
+                  selected ? "border-b-amber-500" : "border-b-white"
                 )
               }
             >
-              <div className="mx-1 w-8 hover:animate-[bounce_2s_ease-in_infinite] md:mx-6 md:w-12">
+              <div
+                className={classNames(
+                  "mx-1 w-8 duration-300 md:mx-6 md:w-12",
+                  tab.index === selectedIndex
+                    ? "-translate-y-3 scale-125"
+                    : "hover:-translate-y-3 hover:scale-125"
+                )}
+              >
                 <img className="h-full w-full" src={tab.icon} />
               </div>
             </Tab>
