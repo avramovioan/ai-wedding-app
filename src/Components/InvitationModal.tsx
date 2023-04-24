@@ -10,7 +10,7 @@ function InvitationModal(props: { onClose: () => void }) {
 
   return (
     <div
-      className="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4"
+      className="fixed inset-0 z-30 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4"
       onClick={props.onClose}
     >
       <div
