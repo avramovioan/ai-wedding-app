@@ -8,3 +8,46 @@ body,
   height: 100%;
   font-family: 'Times New Roman', Times, serif;
 }
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+@media screen and (min-width: 768px) {
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* ::-webkit-scrollbar:hover {
+  width: 12px;
+} */
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: rgba(130, 130, 130, 0.2);
+}
+
+::-webkit-scrollbar:hover~ ::-webkit-scrollbar-thumb {
+  background: rgba(25, 25, 25, 1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(170, 170, 170, 0.5);
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(60, 60, 60, 1);
+  width: 12px;
+}
+}
