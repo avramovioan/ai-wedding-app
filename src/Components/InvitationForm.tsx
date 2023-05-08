@@ -51,6 +51,7 @@ export default function InvitationForm() {
       drink_choices: [],
       is_child: false,
       food_choice: null,
+      guest_id: "123",
     },
     // {
     //   id: 2,
@@ -128,9 +129,12 @@ export default function InvitationForm() {
           ...acc,
           [value.id]: {
             ...value,
-            drink_choices: value.drink_choices.map(
-              (dr) => drinks.find((d) => d.id == dr)!
-            ),
+            drink_choices:
+              value.drink_choices === null
+                ? []
+                : value.drink_choices.map(
+                    (dr) => drinks.find((d) => d.id == dr)!
+                  ),
             food_choice:
               value.food_choice === null
                 ? getDefaultFood(value, foods)

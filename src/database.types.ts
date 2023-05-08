@@ -74,8 +74,9 @@ export interface Database {
       user: {
         Row: {
           alergies: string | null
-          drink_choices: number[]
+          drink_choices: number[] | null
           food_choice: number | null
+          guest_id: string
           id: number
           is_child: boolean
           is_coming: boolean
@@ -83,8 +84,9 @@ export interface Database {
         }
         Insert: {
           alergies?: string | null
-          drink_choices: number[]
+          drink_choices?: number[] | null
           food_choice?: number | null
+          guest_id: string
           id?: number
           is_child?: boolean
           is_coming?: boolean
@@ -92,8 +94,9 @@ export interface Database {
         }
         Update: {
           alergies?: string | null
-          drink_choices?: number[]
+          drink_choices?: number[] | null
           food_choice?: number | null
+          guest_id?: string
           id?: number
           is_child?: boolean
           is_coming?: boolean
@@ -182,6 +185,7 @@ export interface Database {
           owner: string | null
           path_tokens: string[] | null
           updated_at: string | null
+          version: string | null
         }
         Insert: {
           bucket_id?: string | null
@@ -193,6 +197,7 @@ export interface Database {
           owner?: string | null
           path_tokens?: string[] | null
           updated_at?: string | null
+          version?: string | null
         }
         Update: {
           bucket_id?: string | null
@@ -204,6 +209,7 @@ export interface Database {
           owner?: string | null
           path_tokens?: string[] | null
           updated_at?: string | null
+          version?: string | null
         }
       }
     }
@@ -236,7 +242,7 @@ export interface Database {
         Args: {
           name: string
         }
-        Returns: string[]
+        Returns: unknown
       }
       get_size_by_bucket: {
         Args: Record<PropertyKey, never>

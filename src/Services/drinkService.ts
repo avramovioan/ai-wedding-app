@@ -10,29 +10,31 @@ function cacheDrinks(drinks: DrinkData["Row"][] | null) {
 }
 
 export async function getDrinks(): Promise<DrinkData["Row"][]> {
-  return [
-    {
-      id: 1,
-      name: "Vodka",
-    },
-    {
-      id: 2,
-      name: "Rakia",
-    },
-    {
-      id: 3,
-      name: "Whiskey",
-    },
-  ];
-  //   const drinksJson: string | null = sessionStorage.getItem(SS_DRINKS);
-  //   if (drinksJson) {
-  //     return JSON.parse(drinksJson);
-  //   }
-  //   const { data, error } = await supabase.from("drink").select();
-  //   if (error != null) {
-  //     throw error;
-  //   }
-  //   if (data == null) throw new Error("Нещо се обърка с пиийнито.");
-  //   cacheDrinks(data);
-  //   return data;
+  // return [
+  //   {
+  //     id: 1,
+  //     name: "Vodka",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Rakia",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Whiskey",
+  //   },
+  // ];
+  const drinksJson: string | null = sessionStorage.getItem(SS_DRINKS);
+  if (drinksJson !== null && drinksJson !== "[]") {
+    return JSON.parse(drinksJson);
+  }
+  console.log("Getting drinks");
+  const { data, error } = await supabase.from("drink").select();
+  if (error != null) {
+    throw error;
+  }
+  console.log(data);
+  if (data == null) throw new Error("Нещо се обърка с пиийнито.");
+  cacheDrinks(data);
+  return data;
 }

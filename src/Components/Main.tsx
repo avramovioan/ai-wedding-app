@@ -1,4 +1,4 @@
-import InvitationLayout from "./InvitationLayout2";
+import InvitationLayout from "./InvitationLayout";
 import Tabs from "./Tabs";
 import Timer from "./Timer";
 

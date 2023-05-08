@@ -26,62 +26,62 @@ const tabs: TabObj[] = [
   {
     name: "test",
     icon: schedule,
-    posts: [
-      {
-        texts: [
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-        ],
-      },
-      {
-        texts: [
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-        ],
-      },
-      {
-        texts: [
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-        ],
-      },
-      {
-        texts: [
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-        ],
-      },
-      {
-        texts: [
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-        ],
-      },
-      {
-        texts: [
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-          "АААААААААААААААА",
-        ],
-      },
-    ],
+    posts: [],
     index: 0,
   },
   {
     name: "test2",
     icon: rings,
-    posts: [],
+    posts: [
+      {
+        texts: [
+          "В парка в онзи слънчев ден",
+          "се срещтна ти с мен.",
+          "И всичко почна като на игра,",
+          "Но накрая някой изгоря!",
+        ],
+      },
+      {
+        texts: [
+          "Ето че се влюби ти в мен,",
+          "а аз отдавна вече бях в плен",
+          "и така започна нашата история",
+          "изпълнена с любов и еуфория! ",
+        ],
+      },
+      {
+        texts: [
+          "След вече две години се реши,",
+          "пък и обичаме се до уши,",
+          "та сватба ще направим",
+          "и хич? няма да се бавим!",
+        ],
+      },
+      {
+        texts: [
+          "Тъй като на Валя е вината",
+          "сега тя ще е кумата!",
+          "A Весо с пръстена помогна",
+          "и кумстване го погна!",
+        ],
+      },
+      {
+        texts: [
+          "На 25.08.2023 ще е тържеството,",
+          "за това си стягай облеклото",
+          "и горе в дясно потвърди,",
+          "защото поканен си и ти!",
+        ],
+      },
+      {
+        texts: [
+          "И недей да мислиш за подарък!",
+          "Просто постави го в плика малък",
+          "и на сватбата ни ти ела,",
+          "че да падне чудна веселба!",
+        ],
+      },
+    ],
     index: 1,
   },
   {
@@ -112,9 +112,9 @@ export default function Tabs() {
     <div className="h-full max-w-5xl py-3 sm:px-0 md:mt-4">
       <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
         <Tab.List className="flex justify-center">
-          {tabs.map((tab) => (
+          {tabs.map((tab, idx) => (
             <Tab
-              key={tab.name}
+              key={idx}
               as="div"
               className={({ selected }) =>
                 classNames(
@@ -136,13 +136,16 @@ export default function Tabs() {
             </Tab>
           ))}
         </Tab.List>
-        <Tab.Panels className="mt-4">
+        <Tab.Panels className="mt-4 ">
           {tabs.map((tab, idx) => (
             <Tab.Panel key={idx} className={classNames("focus:outline-none")}>
-              {tab.posts.map((post) => (
-                <div className="mt-5 w-full flex-col">
-                  {post.texts?.map((text) => (
-                    <div className="flex w-full justify-center text-xl text-white md:text-2xl">
+              {tab.posts.map((post, idx) => (
+                <div className="mt-5 w-full flex-col" key={idx}>
+                  {post.texts?.map((text, idx) => (
+                    <div
+                      key={idx}
+                      className="flex w-full justify-center text-xl italic text-white md:text-2xl"
+                    >
                       <p className="font-serif">{text}</p>
                     </div>
                   ))}

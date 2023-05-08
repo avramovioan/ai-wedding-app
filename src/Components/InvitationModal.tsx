@@ -1,4 +1,4 @@
-import { ReactComponent as Invitation } from "../invitation.svg";
+import { ReactComponent as Invitation } from "../wedding-invitation.svg";
 import useWindowSize from "./useWindowSize";
 import { Link } from "react-router-dom";
 
@@ -37,7 +37,12 @@ function InvitationModal(props: { onClose: () => void }) {
         >
           Свали PDF
         </a> */}
-        <Link to="/invitation.pdf" target="_blank" download>
+        <Link
+          className="text-lg font-semibold text-slate-300 duration-150 md:text-xl"
+          to="/invitation.pdf"
+          target="_blank"
+          download
+        >
           Свали PDF
         </Link>
       </div>

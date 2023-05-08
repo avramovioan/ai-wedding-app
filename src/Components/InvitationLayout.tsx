@@ -1,105 +1,41 @@
 import { Transition } from "@headlessui/react";
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import InvitationModal from "./InvitationModal";
-import us from "../us5.jpg";
-import invitationIcon from "../invitation-icon.svg";
-import rsvp from "../rsvp.svg";
+import us from "../us.jpg";
+import InvitationFormModal from "./InvitaitonFormModal";
 
 export default function InvitationLayout() {
-  const [showInvitation, setShowInvitation] = useState(false);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setShowInvitation(true);
-  //   }, 750);
-  // }, []);
+  const [showInvitation, setShowInvitation] = useState(false); //TODO: change to true
+  const [showInvitationForm, setShowInvitationForm] = useState(false);
 
   return (
     <div className="relative z-50">
       <div className="h-96 w-full md:h-[37rem]">
-        <img
-          className="h-full w-full transform object-cover object-[50%_60%]"
-          src={us}
-        />
+        <img className="h-full w-full object-cover object-[50%_60%]" src={us} />
       </div>
-      <div className="absolute top-0 flex w-full flex-row justify-between">
+      <div className="absolute top-0 h-24 w-full overflow-hidden md:h-40">
         <button
-          className="h-full text-xl font-bold italic text-white md:text-2xl"
+          className="absolute -top-[15.5rem] -left-[6.5rem] h-72 w-72 cursor-pointer rounded-full
+                        bg-gradient-to-tr from-[rgb(72,116,101)] to-[#1d2e28] md:-top-[25rem] 
+                        md:-left-[14rem] md:h-[30rem] md:w-[30rem]"
           onClick={() => setShowInvitation(true)}
         >
-          <div className="rotate-180">
-            {/* <svg
-              height="100"
-              width="100"
-              className="duration-2 absolute animate-ping cursor-pointer opacity-75"
-              onClick={() => setShowInvitation(true)}
-            >
-              <circle cx="100" cy="100" r="100" fill="#487465"></circle>
-            </svg> */}
-            <svg height="100" width="100">
-              <defs>
-                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop
-                    offset="0%"
-                    stopColor="rgb(72,116,101)"
-                    stopOpacity="1"
-                  />
-                  <stop offset="100%" stopColor="#1d2e28" stopOpacity="1" />
-                </linearGradient>
-              </defs>
-              <circle cx="100" cy="100" r="100" fill="url(#grad3)"></circle>
-            </svg>
-          </div>
-          <div className="absolute top-[25px] left-0 rotate-[-45deg]">
-            <p>Покана</p>
-          </div>
-        </button>
-
-        {/* <div className="relative m-2 h-20 w-12 cursor-pointer duration-300 hover:scale-125 md:w-20">
-          <img className="h-full w-full " src={rsvp} />
-        </div> */}
-
-        <button
-          className="h-full text-xl font-bold italic text-white md:text-2xl"
-          onClick={() => setShowInvitation(true)}
-        >
-          <div className="-rotate-90">
-            {/* <svg
-              height="100"
-              width="100"
-              className="duration-2 absolute animate-ping cursor-pointer opacity-75"
-              onClick={() => setShowInvitation(true)}
-            >
-              <circle cx="100" cy="100" r="100" fill="#487465"></circle>
-            </svg> */}
-            <svg height="100" width="100">
-              <defs>
-                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop
-                    offset="0%"
-                    stopColor="rgb(72,116,101)"
-                    stopOpacity="1"
-                  />
-                  <stop offset="100%" stopColor="#1d2e28" stopOpacity="1" />
-                </linearGradient>
-              </defs>
-              <circle cx="100" cy="100" r="100" fill="url(#grad3)"></circle>
-            </svg>
-          </div>
-          <div className="absolute top-[35px] right-[-10px] rotate-[45deg]">
-            <p>Потвърди</p>
-          </div>
-        </button>
-
-        {/* <button className="m-5 flex rounded-lg border border-white p-2 text-xl font-bold text-white duration-300 hover:scale-125 md:p-3 md:text-2xl">
-          <p className="italic">Потвърди</p>
-
-          <span className="relative flex h-3 w-3">
-            <span className="absolute bottom-0 inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-            <span className="relative inline-flex h-3 w-3 rounded-full bg-green-500"></span>
+          <span className="absolute bottom-[0.6rem] right-[6rem] text-lg italic text-white md:bottom-[1.8rem] md:right-[8.6rem] md:text-3xl">
+            Покана
           </span>
-        </button> */}
+        </button>
+        <div className="absolute -top-[8rem] -right-[2rem] h-36 w-36 animate-ping  rounded-full bg-gradient-to-tl from-[rgb(72,116,101)] to-[#1d2e28] md:-right-[4rem] md:-top-[11rem] md:h-[15rem] md:w-[15rem]"></div>
+        <button
+          className="absolute -top-[15.5rem] -right-[6.5rem] h-72 w-72 rounded-full bg-gradient-to-tl from-[rgb(72,116,101)] to-[#1d2e28] md:-top-[25rem] 
+            md:-right-[14rem] md:h-[30rem] md:w-[30rem]"
+          onClick={() => setShowInvitationForm(true)}
+        >
+          <span className="absolute bottom-[0.6rem] left-[5.3rem] text-lg italic text-white md:bottom-[1.8rem] md:left-[7.5rem] md:text-3xl">
+            Потвърди
+          </span>
+        </button>
       </div>
+
       <Transition
         show={showInvitation}
         appear
@@ -116,9 +52,38 @@ export default function InvitationLayout() {
           }}
         ></InvitationModal>
       </Transition>
+
+      <Transition
+        show={showInvitationForm}
+        appear
+        enter="transition-opacity duration-500"
+        enterFrom="opacity-0"
+        enterTo="opacity-100"
+        leave="transition-opacity duration-500"
+        leaveFrom="opacity-100"
+        leaveTo="opacity-0"
+      >
+        <InvitationFormModal
+          onClose={() => {
+            setShowInvitationForm(false);
+          }}
+        ></InvitationFormModal>
+      </Transition>
     </div>
   );
 }
 
-//mix-blend-overlay
-//bg-gradient-to-tr from-green-700 to-purple-700
+{
+  /* <div className="absolute -top-[8rem] -left-[8rem] h-72 w-72 rounded-full ">
+<img
+  src={rose}
+  className="h-full w-full animate-[spin_15s_linear_infinite]"
+/>
+<button
+  className="absolute bottom-[5rem] right-[3rem] text-lg italic text-[#1d2e28]  md:text-3xl"
+  onClick={() => setShowInvitation(true)}
+>
+  Покана
+</button>
+</div> */
+}
