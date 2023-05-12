@@ -17,7 +17,6 @@ export default function InvitationForm() {
   const [, getDrinksStatus, getDrinksResponse] = useAsync(getDrinks, {
     runOnMountArgs: [],
   });
-
   const drinks = getDrinksResponse || [];
 
   const [, getFoodsStatus, getFoodsRespnse] = useAsync(getFoods, {

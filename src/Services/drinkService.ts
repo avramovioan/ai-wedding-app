@@ -29,7 +29,7 @@ export async function getDrinks(): Promise<DrinkData["Row"][]> {
     return JSON.parse(drinksJson);
   }
   console.log("Getting drinks");
-  const { data, error } = await supabase.from("drink").select();
+  const { data, error } = await supabase.from("drink").select("*");
   if (error != null) {
     throw error;
   }

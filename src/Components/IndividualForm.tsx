@@ -96,7 +96,7 @@ export default function IndividualForm({
                  focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
                   focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 md:text-xl"
                 >
-                  <span className="block truncate">
+                  <span className="block truncate whitespace-normal">
                     {userData.drink_choices.length === 0
                       ? "Няма да пия нищо 😞"
                       : userData.drink_choices
@@ -222,12 +222,12 @@ export default function IndividualForm({
           >
             <div className="relative mt-1 min-w-full">
               <Listbox.Button
-                className="relative w-full cursor-pointer 
+                className="relative w-full cursor-pointer
               rounded-lg bg-white py-2 pl-3 pr-10 text-left text-sm shadow-md 
               focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white
                focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 md:text-xl"
               >
-                <span className="block truncate">
+                <span className="block truncate whitespace-normal">
                   {userData.food_choice === undefined
                     ? ""
                     : userData.food_choice.name}
@@ -260,12 +260,11 @@ export default function IndividualForm({
                     >
                       {({ selected }) => (
                         <>
-                          <span
-                            className={`block truncate ${
-                              selected ? "font-medium" : "font-normal"
-                            }`}
-                          >
+                          <span className="block truncate whitespace-normal text-sm md:text-xl">
                             {food.name}
+                          </span>
+                          <span className="ml-3 block truncate whitespace-normal text-xs md:text-sm">
+                            {food.description}
                           </span>
                           {selected ? (
                             <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
