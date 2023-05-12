@@ -143,7 +143,7 @@ export default function Tabs() {
                     key={idx}
                     className="flex w-full justify-center text-xl italic text-white md:text-2xl"
                   >
-                    <p className="font-serif">{line}</p>
+                    <p className="whitespace-nowrap font-serif">{line}</p>
                   </div>
                 ))}
               </div>
