@@ -108,14 +108,14 @@ export default function InvitationForm() {
     // },
   ];
 
-  function getDefaultFood(
-    user: UserData["Row"],
-    foods: FoodData["Row"][]
-  ): FoodData["Row"] {
-    return user.is_child
-      ? foods.find((f) => f.for_child)!
-      : foods.find((f) => !f.for_child)!;
-  }
+  // function getDefaultFood(
+  //   user: UserData["Row"],
+  //   foods: FoodData["Row"][]
+  // ): FoodData["Row"] {
+  //   return user.is_child
+  //     ? foods.find((f) => f.for_child)!
+  //     : foods.find((f) => !f.for_child)!;
+  // }
 
   useEffect(() => {
     const drinks = getDrinksResponse || [];
@@ -136,7 +136,7 @@ export default function InvitationForm() {
                   ),
             food_choice:
               value.food_choice === null
-                ? getDefaultFood(value, foods)
+                ? foods.find((f) => f.id === 1)!
                 : foods.find((food) => food.id == value.id)!,
           },
         };

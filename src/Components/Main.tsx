@@ -30,19 +30,3 @@ function Main() {
 }
 
 export default Main;
-
-//bg-[#1d2e28]
-//[rgb(56,61,60)]
-
-{
-  /* <img
-          className="invisible absolute -left-14 -top-20 h-[40rem] w-[40rem] rotate-[90deg] stroke-slate-200 opacity-10  md:visible"
-          src={branch}
-          alt="somethig"
-        />
-        <img
-          className="invisible absolute -right-14 -top-20 h-[40rem] w-[40rem] -rotate-[90deg] stroke-slate-200 opacity-10 md:visible"
-          src={branch}
-          alt="somethig"
-        /> */
-}
