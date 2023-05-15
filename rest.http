@@ -1,0 +1,52 @@
+POST https://pskvbjrhyhonygfhncqw.functions.supabase.co/update-users HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBza3ZianJoeWhvbnlnZmhuY3F3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzgwOTEzOTIsImV4cCI6MTk5MzY2NzM5Mn0.Ll2qC_a8ksdsOXcoUPcrcAFi3xSfKWrKk2iL7k50UUI
+guest_id: test
+
+[
+    {
+        "id": 172,
+        "name": "Ioan Avramov",
+        "is_coming": true,
+        "drink_choices": null,
+        "alergies": "риба",
+        "is_child": false,
+        "food_choice": 1,
+        "guest_id": "test"
+    },
+    {
+        "id": 173,
+        "name": "Александрина Гергинова",
+        "is_coming": true,
+        "drink_choices": null,
+        "alergies": null,
+        "is_child": true,
+        "food_choice": 2,
+        "guest_id": "test"
+    }
+]
+
+###
+
+POST https://pskvbjrhyhonygfhncqw.functions.supabase.co/get-users HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBza3ZianJoeWhvbnlnZmhuY3F3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzgwOTEzOTIsImV4cCI6MTk5MzY2NzM5Mn0.Ll2qC_a8ksdsOXcoUPcrcAFi3xSfKWrKk2iL7k50UUI
+guest_id: test
+
+{
+    "id": 173,
+    "name": "Александрина Гергинова",
+    "is_coming": true,
+    "drink_choices": null,
+    "alergies": null,
+    "is_child": true,
+    "food_choice": 2,
+    "guest_id": "test"
+}
+
+
+# curl -X POST https://pskvbjrhyhonygfhncqw.functions.supabase.co/update-users \
+#    -H "Content-Type: application/json" \
+#    -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBza3ZianJoeWhvbnlnZmhuY3F3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzgwOTEzOTIsImV4cCI6MTk5MzY2NzM5Mn0.Ll2qC_a8ksdsOXcoUPcrcAFi3xSfKWrKk2iL7k50UUI" \
+#    -H "guest_id: test" \
+#    -b '[{"id":172,"name":"Ioan Avramov","is_coming":true,"drink_choices":null,"alergies":"риба","is_child":false,"food_choice":1,"guest_id":"test"},{"id":173,"name":"Александрина Гергинова","is_coming":true,"drink_choices":null,"alergies":null,"is_child":true,"food_choice":2,"guest_id":"test"}]'
