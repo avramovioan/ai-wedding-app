@@ -20,7 +20,9 @@ export default function IndividualForm({
   ): void;
   userData: UserDataWithDrinkAndFoodData;
 }) {
-  const [hasAlergies, setHasAlergies] = useState(false);
+  const [hasAlergies, setHasAlergies] = useState(
+    userData.alergies?.length !== 0
+  );
   return (
     <div className="mb-9 rounded-2xl border border-amber-500 p-2 drop-shadow-md">
       <div>
@@ -110,7 +112,7 @@ export default function IndividualForm({
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                  <Listbox.Options className="relative z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                     {drinks.map((drink) => (
                       <Listbox.Option
                         key={drink.id}
@@ -238,7 +240,7 @@ export default function IndividualForm({
                     <Listbox.Option
                       key={food.id}
                       className={({ active }) =>
-                        `relative cursor-pointer select-none py-2 pl-10 pr-4 text-sm md:text-xl ${
+                        `cursor-pointer select-none py-2 pl-10 pr-4 text-sm md:text-xl ${
                           active
                             ? "bg-amber-100 text-amber-900"
                             : "text-gray-900"

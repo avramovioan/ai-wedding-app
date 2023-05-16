@@ -4,7 +4,7 @@ import { getDrinks } from "../Services/drinkService";
 import { getFoods } from "../Services/foodService";
 import { UserDataWithDrinkAndFoodData, UserData } from "../Types/UserData";
 import IndividualForm from "./IndividualForm";
-import { getUserGroup } from "../Services/userService";
+import { getUserGroup, updateUsersGroup } from "../Services/userService";
 import { useLocation } from "react-router-dom";
 
 export default function InvitationForm() {
@@ -68,8 +68,8 @@ export default function InvitationForm() {
                   ),
             food_choice:
               value.food_choice === null
-                ? foods.find((f) => f.id === 1)!
-                : foods.find((food) => food.id == value.id)!,
+                ? foods.find((f) => f.id == 1)!
+                : foods.find((food) => food.id === value.food_choice)!,
           },
         };
       }, {})
@@ -86,7 +86,8 @@ export default function InvitationForm() {
               <form
                 onSubmit={(evt) => {
                   evt.preventDefault();
-                  console.log(formData);
+                  //console.log(formData);
+                  updateUsersGroup(Object.values(formData));
                 }}
               >
                 {Object.values(formData).map((u) => (

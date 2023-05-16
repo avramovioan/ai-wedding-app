@@ -35,28 +35,29 @@ export async function getUserGroup(
   return data;
 }
 
-export async function updateGroup(
+export async function updateUsersGroup(
   users: UserDataWithDrinkAndFoodData[]
 ): Promise<void> {
-  const updatedUsers: UserData["Row"][] = [];
-  await Promise.all(
-    users.map(async (user) => {
-      const userToUpdate: UserData["Update"] = {
-        ...user,
-        drink_choices: user.drink_choices.map((drink) => drink.id),
-        food_choice: user.food_choice.id,
-      };
-      const { data, error } = await supabase
-        .from("user")
-        .update({
-          ...userToUpdate,
-        })
-        .eq("id", user.id)
-        .select("*");
-      if (error != null) throw error;
-      updatedUsers.push(data[0]); //expecting only one
-    })
+  const usersToUpdate: UserData["Update"][] = users.map((user) => {
+    return {
+      ...user,
+      drink_choices: user.drink_choices.map((drink) => drink.id),
+      food_choice: user.food_choice.id,
+    };
+  });
+  const { data: updatedUsers, error } = await supabase.functions.invoke(
+    "update-users",
+    {
+      headers: {
+        guest_id: users[0].guest_id,
+      },
+      body: usersToUpdate,
+    }
   );
+  if (error != null) {
+    throw error;
+  }
+
   cacheUsers(updatedUsers);
   return;
 }
