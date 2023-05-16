@@ -12,17 +12,12 @@ export default function App() {
   const [validUUID, setValidUUID] = useState(false);
 
   useEffect(() => {
-    async function checkUUID() {
-      if (guestId === null) return;
-      try {
-        //const response = await axios.get(`/api/users?uuid=${uuid}`);
-        const users = await getUserGroup(guestId);
-        setValidUUID(users.length !== 0);
-      } catch (error) {
-        setValidUUID(false);
-      }
-    }
-    checkUUID();
+    if (guestId === null) return;
+    getUserGroup(guestId)
+      .then((val) => {
+        setValidUUID(val.length !== 0);
+      })
+      .catch(() => setValidUUID(false));
   }, [guestId]);
 
   return <>{validUUID ? <Main /> : <BaseView />}</>;
