@@ -9,12 +9,13 @@ function InvitationModal(props: { onClose: () => void }) {
   const size = Math.min(width, (height - 64) / 1.3879) - spacing;
 
   return (
-    <div
-      className="fixed inset-0 z-30 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4"
-      onClick={props.onClose}
-    >
+    <div className="fixed inset-0 z-30 flex flex-col items-center justify-center">
       <div
-        className="m-2 flex flex-col"
+        className="fixed inset-0 bg-black bg-opacity-60 p-4"
+        onClick={props.onClose}
+      ></div>
+      <div
+        className="z-10 m-2 flex flex-col"
         style={{
           width: size,
           height: (size + 64) * 1.3879,

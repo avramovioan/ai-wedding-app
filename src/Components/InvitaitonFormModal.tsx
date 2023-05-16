@@ -11,9 +11,13 @@ export default function InvitationFormModal({
   const spacing = 16;
   const size = Math.min(width, (height - 64) / 1.3879) - spacing;
   return (
-    <div className="fixed inset-0 z-30 flex flex-col items-center justify-center bg-black bg-opacity-60 p-4">
+    <div className="fixed inset-0 z-30 flex flex-col items-center justify-center">
       <div
-        className="flex flex-col"
+        className="fixed inset-0 bg-black bg-opacity-60 p-4"
+        onClick={onClose}
+      ></div>
+      <div
+        className="z-10 flex flex-col"
         style={{
           width: size,
           height: (size + 64) * 1.3879,

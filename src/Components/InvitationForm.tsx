@@ -61,7 +61,7 @@ export default function InvitationForm() {
           [value.id]: {
             ...value,
             drink_choices:
-              value.drink_choices === null
+              value.drink_choices === null || drinks.length === 0
                 ? []
                 : value.drink_choices.map(
                     (dr) => drinks.find((d) => d.id == dr)!

@@ -23,6 +23,7 @@ export default function IndividualForm({
   const [hasAlergies, setHasAlergies] = useState(
     userData.alergies !== null && userData.alergies?.length !== 0
   );
+  console.log(userData);
   return (
     <div className="mb-9 mt-2 rounded-2xl border border-amber-500 p-2 drop-shadow-md">
       <div>
