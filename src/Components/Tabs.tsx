@@ -6,6 +6,7 @@ import schedule from "../schedule.svg";
 import invitationIcon from "../invitation-icon.svg";
 import rsvp from "../rsvp.svg";
 import { useState } from "react";
+import React from "react";
 
 function classNames(...classes: any[]) {
   return classes.filter(Boolean).join(" ");
@@ -64,6 +65,18 @@ const invitation: { text: string[] }[] = [
       "че да падне чудна веселба!",
     ],
   },
+];
+
+const scheduleData = [
+  //{ hour: "11:00", event: "Започва великото обличане" },
+  { hour: "13:00", event: "Крадеца на булки" },
+  { hour: "14:20", event: "Усмивка, снимка, щрак" },
+  { hour: "17:20", event: "Да! Да!" },
+  { hour: "18:00", event: "Поздрави" },
+];
+
+const nearbyHotels = [
+  { hotel: "Hotel Sani", hotelWebsite: "http://hotelsani.com/" },
 ];
 
 export default function Tabs() {
@@ -134,7 +147,22 @@ export default function Tabs() {
           </Tab>
         </Tab.List>
         <Tab.Panels className="mt-4 ">
-          <Tab.Panel className={classNames("focus:outline-none")}></Tab.Panel>
+          <Tab.Panel className={classNames("focus:outline-none")}>
+            <div className="mx-5 mt-10 flex flex-col items-center text-xl text-white md:text-2xl">
+              <div className="w-full max-w-md">
+                <div className="grid grid-cols-3 gap-10 gap-x-5">
+                  {scheduleData.map((item, index) => (
+                    <React.Fragment key={index}>
+                      <div className="col-span-1 font-bold">{item.hour} ч.</div>
+                      <div className="col-span-2 col-start-2 items-end">
+                        {item.event}
+                      </div>
+                    </React.Fragment>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Tab.Panel>
           <Tab.Panel className={classNames("focus:outline-none")}>
             {invitation.map((textObj, idx) => (
               <div className="mt-5 w-full flex-col" key={idx}>
@@ -149,7 +177,20 @@ export default function Tabs() {
               </div>
             ))}
           </Tab.Panel>
-          <Tab.Panel className={classNames("focus:outline-none")}></Tab.Panel>
+          <Tab.Panel className={classNames("focus:outline-none")}>
+            <div className="h-36 w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d740.97576564259!2d24.8500706!3d42.0238119!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd91b7a001859%3A0x5749d65054a8361a!2z0JHQsNC70L3QsCDQl9Cw0LvQsCBSb3lhbA!5e0!3m2!1sen!2sbg!4v1684249927287!5m2!1sen!2sbg"
+                className="h-full w-full"
+                loading="lazy"
+                allowFullScreen={true}
+              ></iframe>
+            </div>
+            <div className="mt-5 flex w-full flex-col items-center text-xl text-white md:text-2xl">
+              <h5>Допълнителна информация</h5>
+              <div></div>
+            </div>
+          </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
       {/* <div className="h-24 w-24">

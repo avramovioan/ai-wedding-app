@@ -21,10 +21,10 @@ export default function IndividualForm({
   userData: UserDataWithDrinkAndFoodData;
 }) {
   const [hasAlergies, setHasAlergies] = useState(
-    userData.alergies?.length !== 0
+    userData.alergies !== null && userData.alergies?.length !== 0
   );
   return (
-    <div className="mb-9 rounded-2xl border border-amber-500 p-2 drop-shadow-md">
+    <div className="mb-9 mt-2 rounded-2xl border border-amber-500 p-2 drop-shadow-md">
       <div>
         <label className="undefined block text-sm font-medium text-white md:text-2xl ">
           Име
