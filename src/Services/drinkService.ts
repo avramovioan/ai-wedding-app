@@ -1,4 +1,5 @@
 import { DrinkData } from "../Types/DrinkData";
+import { UserData } from "../Types/UserData";
 import supabase from "./supabaseClient";
 
 const SS_DRINKS = "drinks";

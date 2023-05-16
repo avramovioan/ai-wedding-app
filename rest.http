@@ -8,7 +8,7 @@ guest_id: test
         "id": 172,
         "name": "Ioan Avramov",
         "is_coming": true,
-        "drink_choices": null,
+        "drink_choices": [1,3,5],
         "alergies": "риба",
         "is_child": false,
         "food_choice": 1,
@@ -18,10 +18,20 @@ guest_id: test
         "id": 173,
         "name": "Александрина Гергинова",
         "is_coming": true,
-        "drink_choices": null,
+        "drink_choices": [2,4,5],
         "alergies": null,
         "is_child": true,
         "food_choice": 2,
+        "guest_id": "test"
+    },
+        {
+        "id": 174,
+        "name": "Аурора Аврамова",
+        "is_coming": true,
+        "drink_choices": null,
+        "alergies": null,
+        "is_child": false,
+        "food_choice": 3,
         "guest_id": "test"
     }
 ]

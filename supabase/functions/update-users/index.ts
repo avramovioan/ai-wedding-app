@@ -32,21 +32,21 @@ serve(async (req) => {
   let areEqual = (a, b): boolean => {
     return (
       a.length === b.length &&
-      a.every((item, _) => b.findIndex((i) => i.id) !== -1)
+      a.every((item, _) => b.findIndex((i) => i.id === item.id) !== -1)
     );
   };
 
   //groups do not contain the same users
-  if (areEqual(updatedData, usersToUpdate)) {
-    const errorMessage = "group sizes do not match";
+  if (!areEqual(updatedData, usersToUpdate)) {
+    const errorMessage = "groups do not match";
     return new Response(JSON.stringify({ errorMessage }), {
       headers: { "Content-Type": "application/json" },
     });
   }
 
-  const { data: upsertedUsers, upsertError: upsertError } = await supabase
+  const { data: upsertedUsers, error: upsertError } = await supabase
     .from("user")
-    .upsert(updatedData, { onConflict: "handle" })
+    .upsert(updatedData)
     .select();
 
   if (upsertError !== null) {
