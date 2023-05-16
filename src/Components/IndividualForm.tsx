@@ -24,10 +24,7 @@ export default function IndividualForm({
   return (
     <div className="mb-9 rounded-2xl border border-amber-500 p-2 drop-shadow-md">
       <div>
-        <label
-          htmlFor="name"
-          className="undefined block text-sm font-medium text-white md:text-2xl "
-        >
+        <label className="undefined block text-sm font-medium text-white md:text-2xl ">
           Име
         </label>
         <div className="flex flex-col items-start">
@@ -46,10 +43,7 @@ export default function IndividualForm({
         </div>
       </div>
       <div className="mt-4 flex justify-between">
-        <label
-          htmlFor="email"
-          className="undefined block text-sm font-medium  text-white  md:text-2xl"
-        >
+        <label className="undefined block text-sm font-medium  text-white  md:text-2xl">
           Ще присъствам?
         </label>
         <div className="flex flex-col justify-center">
@@ -159,10 +153,7 @@ export default function IndividualForm({
       )}
 
       <div className="mt-4 flex justify-between">
-        <label
-          htmlFor="email"
-          className="undefined block text-sm font-medium text-white md:text-2xl "
-        >
+        <label className="undefined block text-sm font-medium text-white md:text-2xl ">
           Имам алергии:
         </label>
         <div className="flex flex-col justify-center">
@@ -183,10 +174,7 @@ export default function IndividualForm({
       </div>
       {hasAlergies && (
         <div>
-          <label
-            htmlFor="name"
-            className="undefined block text-sm font-medium text-white md:text-xl"
-          >
+          <label className="undefined block text-sm font-medium text-white md:text-xl">
             Моля избройте алергиите си:
           </label>
           <div className="flex flex-col items-start">

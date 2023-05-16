@@ -12,6 +12,20 @@ serve(async (req) => {
     Deno.env.get("SUPABASE_URL") ?? "",
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
   );
+
+  const _headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST",
+    "Access-Control-Allow-Headers": "*",
+  };
+
+  if (req.method === "OPTIONS") {
+    return new Response("OK", {
+      headers: _headers,
+    });
+  }
+
   const guestId = await req.headers.get("guest_id");
   const updatedData = await req.json();
 
@@ -22,12 +36,12 @@ serve(async (req) => {
 
   if (selectError !== null) {
     return new Response(JSON.stringify(selectError), {
-      headers: { "Content-Type": "application/json" },
+      headers: _headers,
     });
   }
   if (updatedData.length !== usersToUpdate.length) {
     return new Response("groups do not match", {
-      headers: { "Content-Type": "application/json" },
+      headers: _headers,
     });
   }
 
@@ -39,7 +53,7 @@ serve(async (req) => {
     );
     if (existingItemIndex === -1) {
       return new Response("groups do not match", {
-        headers: { "Content-Type": "application/json" },
+        headers: _headers,
       });
     }
     userUpsertData.push({
@@ -56,11 +70,11 @@ serve(async (req) => {
 
   if (upsertError !== null) {
     return new Response(JSON.stringify(upsertError), {
-      headers: { "Content-Type": "application/json" },
+      headers: _headers,
     });
   }
 
   return new Response(JSON.stringify(upsertedUsers), {
-    headers: { "Content-Type": "application/json" },
+    headers: _headers,
   });
 });

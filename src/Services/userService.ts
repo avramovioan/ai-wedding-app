@@ -14,42 +14,23 @@ export async function getUserGroup(
 ): Promise<UserData["Row"][]> {
   const usersJson: string | null = sessionStorage.getItem(SS_USERS);
   if (usersJson !== null && usersJson !== "[]") {
-    return JSON.parse(usersJson);
+    const storedUsers: UserData["Row"][] = JSON.parse(usersJson);
+    if (storedUsers.every((user) => user.guest_id === guestId)) {
+      console.log("Getting users from storage");
+      return storedUsers;
+    }
   }
-  console.log("Getting group");
-  const { data, error } = await supabase
-    .from("user")
-    .select("*")
-    .eq("guest_id", guestId);
-
-  const userUpsertData: any = [];
-
-  let areEqual = (
-    incomingData: UserData["Update"][],
-    existingData: UserData["Update"][]
-  ): boolean => {
-    return (
-      incomingData.length === existingData.length &&
-      incomingData.every((item, _) => {
-        const index = existingData.findIndex((i) => i.id === item.id);
-        if (index === -1) return false;
-        // item.guest_id = existingData[index].guest_id;
-        // item.is_child = existingData[index].is_child;
-        userUpsertData.push({
-          ...item,
-          guestId: existingData[index].guest_id,
-          is_child: existingData[index].is_child,
-        });
-        return true;
-      })
-    );
-  };
-
+  console.log("Getting users from db");
+  const { data, error } = await supabase.functions.invoke("get-users", {
+    headers: {
+      guest_id: guestId,
+    },
+  });
   if (error != null) {
     throw error;
   }
   console.log(data);
-  if (data == null) throw new Error("Нещо се обърка с пиийнито.");
+  if (data == null) throw new Error("Нещо се обърка с хората.");
   cacheUsers(data);
   return data;
 }
@@ -61,13 +42,9 @@ export async function updateGroup(
   await Promise.all(
     users.map(async (user) => {
       const userToUpdate: UserData["Update"] = {
-        alergies: user.alergies,
-        drink_choices: user.drink_choices.reduce<number[]>((acc, val) => {
-          acc.push(val.id);
-          return acc;
-        }, []),
+        ...user,
+        drink_choices: user.drink_choices.map((drink) => drink.id),
         food_choice: user.food_choice.id,
-        is_coming: user.is_coming,
       };
       const { data, error } = await supabase
         .from("user")

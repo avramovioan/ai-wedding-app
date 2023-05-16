@@ -12,6 +12,19 @@ serve(async (req) => {
     Deno.env.get("SUPABASE_URL") ?? "",
     Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? ""
   );
+  const _headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "POST",
+    "Access-Control-Allow-Headers": "*",
+  };
+
+  if (req.method === "OPTIONS") {
+    return new Response("OK", {
+      headers: _headers,
+    });
+  }
+
   const guestId = await req.headers.get("guest_id");
 
   //const users = await req.json();
@@ -23,12 +36,12 @@ serve(async (req) => {
     .eq("guest_id", guestId);
   if (error !== null) {
     return new Response(JSON.stringify(error), {
-      headers: { "Content-Type": "application/json" },
+      headers: _headers,
     });
   }
 
   return new Response(JSON.stringify(data), {
-    headers: { "Content-Type": "application/json" },
+    headers: _headers,
   });
 });
 
