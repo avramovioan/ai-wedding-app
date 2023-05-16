@@ -21,6 +21,30 @@ export async function getUserGroup(
     .from("user")
     .select("*")
     .eq("guest_id", guestId);
+
+  const userUpsertData: any = [];
+
+  let areEqual = (
+    incomingData: UserData["Update"][],
+    existingData: UserData["Update"][]
+  ): boolean => {
+    return (
+      incomingData.length === existingData.length &&
+      incomingData.every((item, _) => {
+        const index = existingData.findIndex((i) => i.id === item.id);
+        if (index === -1) return false;
+        // item.guest_id = existingData[index].guest_id;
+        // item.is_child = existingData[index].is_child;
+        userUpsertData.push({
+          ...item,
+          guestId: existingData[index].guest_id,
+          is_child: existingData[index].is_child,
+        });
+        return true;
+      })
+    );
+  };
+
   if (error != null) {
     throw error;
   }

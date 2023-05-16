@@ -15,9 +15,6 @@ serve(async (req) => {
   const guestId = await req.headers.get("guest_id");
   const updatedData = await req.json();
 
-  //const users = await req.json();
-
-  //---------------
   const { data: usersToUpdate, error: selectError } = await supabase
     .from("user")
     .select("*")
@@ -28,25 +25,33 @@ serve(async (req) => {
       headers: { "Content-Type": "application/json" },
     });
   }
-
-  let areEqual = (a, b): boolean => {
-    return (
-      a.length === b.length &&
-      a.every((item, _) => b.findIndex((i) => i.id === item.id) !== -1)
-    );
-  };
-
-  //groups do not contain the same users
-  if (!areEqual(updatedData, usersToUpdate)) {
-    const errorMessage = "groups do not match";
-    return new Response(JSON.stringify({ errorMessage }), {
+  if (updatedData.length !== usersToUpdate.length) {
+    return new Response("groups do not match", {
       headers: { "Content-Type": "application/json" },
+    });
+  }
+
+  const userUpsertData: any = [];
+
+  for (let i = 0; i < updatedData.length; i++) {
+    const existingItemIndex = usersToUpdate.findIndex(
+      (item) => item.id === updatedData[i].id
+    );
+    if (existingItemIndex === -1) {
+      return new Response("groups do not match", {
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+    userUpsertData.push({
+      ...updatedData[i],
+      guest_id: usersToUpdate[existingItemIndex].guest_id,
+      is_child: usersToUpdate[existingItemIndex].is_child,
     });
   }
 
   const { data: upsertedUsers, error: upsertError } = await supabase
     .from("user")
-    .upsert(updatedData)
+    .upsert(userUpsertData)
     .select();
 
   if (upsertError !== null) {
@@ -59,9 +64,3 @@ serve(async (req) => {
     headers: { "Content-Type": "application/json" },
   });
 });
-
-// To invoke:
-// curl -i --location --request POST 'http://localhost:54321/functions/v1/' \
-//   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0' \
-//   --header 'Content-Type: application/json' \
-//   --data '{"name":"Functions"}'
