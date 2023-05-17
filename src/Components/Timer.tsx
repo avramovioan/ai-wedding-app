@@ -14,7 +14,7 @@ export default function Timer(props: { weddingDate: Date }) {
         <div className="font-serif text-xl sm:text-2xl md:text-[2.5rem]">
           {days}
         </div>
-        <div className="font-serif text-xl lowercase md:text-3xl">
+        <div className="font-wedding text-xl lowercase md:text-3xl">
           {daysWord}
         </div>
       </div>
@@ -23,7 +23,7 @@ export default function Timer(props: { weddingDate: Date }) {
         <div className="font-serif text-xl sm:text-2xl md:text-[2.5rem]">
           {hours}
         </div>
-        <div className="font-serif text-xl lowercase md:text-3xl">
+        <div className="font-wedding text-xl lowercase md:text-3xl">
           {hoursWord}
         </div>
       </div>
@@ -32,7 +32,7 @@ export default function Timer(props: { weddingDate: Date }) {
         <div className=" font-serif  text-xl sm:text-2xl md:text-[2.5rem]">
           {minutes}
         </div>
-        <div className="font-serif text-xl lowercase md:text-3xl">
+        <div className="font-wedding text-xl lowercase md:text-3xl">
           {minutesWord}
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function Timer(props: { weddingDate: Date }) {
         <div className="font-serif  text-xl sm:text-2xl md:text-[2.5rem]">
           {seconds}
         </div>
-        <div className="font-serif text-xl lowercase md:text-3xl">
+        <div className="font-wedding text-xl lowercase md:text-3xl">
           {secondsWord}
         </div>
       </div>

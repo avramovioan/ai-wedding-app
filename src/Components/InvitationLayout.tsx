@@ -20,7 +20,7 @@ export default function InvitationLayout() {
                         md:-left-[14rem] md:h-[30rem] md:w-[30rem]"
           onClick={() => setShowInvitation(true)}
         >
-          <span className="absolute bottom-[0.6rem] right-[6rem] text-lg italic text-white md:bottom-[1.8rem] md:right-[8.6rem] md:text-3xl">
+          <span className="absolute bottom-[0.6rem] right-[6rem] font-wedding text-lg italic text-white md:bottom-[1.8rem] md:right-[8.6rem] md:text-3xl">
             Покана
           </span>
         </button>
@@ -30,7 +30,7 @@ export default function InvitationLayout() {
             md:-right-[14rem] md:h-[30rem] md:w-[30rem]"
           onClick={() => setShowInvitationForm(true)}
         >
-          <span className="absolute bottom-[0.6rem] left-[5.3rem] text-lg italic text-white md:bottom-[1.8rem] md:left-[7.5rem] md:text-3xl">
+          <span className="absolute bottom-[0.6rem] left-[5.3rem] font-wedding text-lg italic text-white md:bottom-[1.8rem] md:left-[7.5rem] md:text-3xl">
             Потвърди
           </span>
         </button>
