@@ -169,7 +169,7 @@ export default function Tabs() {
                 {textObj.text.map((line, idx) => (
                   <div
                     key={idx}
-                    className="flex w-full justify-center text-sm italic text-white md:text-2xl"
+                    className="flex w-full justify-center text-base italic text-white md:text-2xl"
                   >
                     <p className="whitespace-nowrap font-serif">{line}</p>
                   </div>
