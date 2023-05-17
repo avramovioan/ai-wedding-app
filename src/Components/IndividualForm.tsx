@@ -49,7 +49,8 @@ export default function IndividualForm({
         <label className="undefined block text-sm font-medium  text-white  md:text-2xl">
           Ще присъствам?
         </label>
-        <div className="flex flex-col justify-center">
+        <div className="flex justify-center">
+          <div className="mr-2 flex-1 text-white"> Не</div>
           <Switch
             checked={userData.is_coming}
             onChange={() => {
@@ -68,6 +69,7 @@ export default function IndividualForm({
               } inline-block h-4 w-4 transform rounded-full bg-white transition`}
             />
           </Switch>
+          <div className="ml-2 flex-1 text-white"> Да</div>
         </div>
       </div>
       {!userData.is_child && (
@@ -159,20 +161,24 @@ export default function IndividualForm({
         <label className="undefined block text-sm font-medium text-white md:text-2xl ">
           Имам алергии:
         </label>
-        <div className="flex flex-col justify-center">
-          <Switch
-            checked={hasAlergies}
-            onChange={setHasAlergies}
-            className={`${
-              hasAlergies ? "bg-amber-500" : "bg-black"
-            } relative inline-flex h-6 w-11 items-center rounded-full`}
-          >
-            <span
+        <div className="flex justify-center">
+          <div className="mr-2 flex-1 text-white">Не </div>
+          <div className="flex-1">
+            <Switch
+              checked={hasAlergies}
+              onChange={setHasAlergies}
               className={`${
-                hasAlergies ? "translate-x-6" : "translate-x-1"
-              } inline-block h-4 w-4 transform rounded-full bg-white transition`}
-            />
-          </Switch>
+                hasAlergies ? "bg-amber-500" : "bg-black"
+              } relative inline-flex h-6 w-11 items-center rounded-full`}
+            >
+              <span
+                className={`${
+                  hasAlergies ? "translate-x-6" : "translate-x-1"
+                } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+              />
+            </Switch>
+          </div>
+          <div className="ml-2 flex-1 text-white"> Да</div>
         </div>
       </div>
       {hasAlergies && (
