@@ -25,7 +25,7 @@ export default function InvitationFormModal({
       >
         <button
           onClick={onClose}
-          className="duration-120 self-end text-3xl font-bold leading-none text-slate-300 hover:scale-125"
+          className="duration-120 self-end font-wedding text-3xl font-bold leading-none text-slate-300 hover:scale-125"
         >
           x
         </button>

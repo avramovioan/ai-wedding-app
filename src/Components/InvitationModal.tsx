@@ -23,7 +23,7 @@ function InvitationModal(props: { onClose: () => void }) {
       >
         <button
           onClick={props.onClose}
-          className="duration-120 self-end text-3xl font-bold leading-none text-slate-300 hover:scale-125"
+          className="duration-120 self-end font-wedding text-3xl font-bold leading-none text-slate-300 hover:scale-125"
         >
           x
         </button>
@@ -39,7 +39,7 @@ function InvitationModal(props: { onClose: () => void }) {
           Свали PDF
         </a> */}
         <Link
-          className="text-lg font-semibold text-slate-300 duration-150 md:text-xl"
+          className="font-wedding text-lg font-semibold text-slate-300 duration-150 md:text-xl"
           to="/invitation.pdf"
           target="_blank"
           download

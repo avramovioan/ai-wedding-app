@@ -49,7 +49,7 @@ export default function IndividualForm({
         <label className="undefined block font-wedding text-sm font-medium  text-white  md:text-2xl">
           Ще присъствам?
         </label>
-        <div className="flex justify-center">
+        <div className="flex items-center">
           <div className="mr-2 flex-1 font-wedding text-sm text-white md:text-2xl">
             {" "}
             Не
@@ -167,9 +167,9 @@ export default function IndividualForm({
         <label className="undefined block font-wedding text-sm font-medium text-white md:text-2xl ">
           Имам алергии:
         </label>
-        <div className="flex justify-center">
+        <div className="flex items-center">
           <div className="mr-2 flex-1 font-wedding text-sm text-white md:text-2xl">
-            Не{" "}
+            Не
           </div>
           <div className="flex-1">
             <Switch
