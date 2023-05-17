@@ -27,7 +27,7 @@ export default function IndividualForm({
   return (
     <div className="mb-9 mt-2 rounded-2xl border border-amber-500 p-2 drop-shadow-md">
       <div>
-        <label className="undefined block text-sm font-medium text-white md:text-2xl ">
+        <label className="undefined block font-wedding text-sm font-medium text-white md:text-2xl ">
           Име
         </label>
         <div className="flex flex-col items-start">
@@ -41,16 +41,19 @@ export default function IndividualForm({
             value={userData.name}
             type="text"
             name="name"
-            className="mt-1 block w-full rounded-md border-gray-300 p-2 text-sm shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 md:text-xl"
+            className="mt-1 block w-full rounded-md border-gray-300 p-2 font-wedding text-sm shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 md:text-xl"
           />
         </div>
       </div>
       <div className="mt-4 flex justify-between">
-        <label className="undefined block text-sm font-medium  text-white  md:text-2xl">
+        <label className="undefined block font-wedding text-sm font-medium  text-white  md:text-2xl">
           Ще присъствам?
         </label>
         <div className="flex justify-center">
-          <div className="mr-2 flex-1 text-sm text-white md:text-2xl"> Не</div>
+          <div className="mr-2 flex-1 font-wedding text-sm text-white md:text-2xl">
+            {" "}
+            Не
+          </div>
           <Switch
             checked={userData.is_coming}
             onChange={() => {
@@ -61,20 +64,23 @@ export default function IndividualForm({
             }}
             className={`${
               userData.is_coming ? "bg-amber-500" : "bg-black"
-            } relative inline-flex h-6 w-11 items-center rounded-full`}
+            } relative inline-flex h-6 w-11 items-center rounded-full font-wedding`}
           >
             <span
               className={`${
                 userData.is_coming ? "translate-x-6" : "translate-x-1"
-              } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+              } inline-block h-4 w-4 transform rounded-full bg-white font-wedding transition`}
             />
           </Switch>
-          <div className="ml-2 flex-1 text-sm text-white md:text-2xl"> Да</div>
+          <div className="ml-2 flex-1 font-wedding text-sm text-white md:text-2xl">
+            {" "}
+            Да
+          </div>
         </div>
       </div>
       {!userData.is_child && (
         <div className="mt-4">
-          <label className="undefined block text-sm font-medium text-white md:text-2xl">
+          <label className="undefined block font-wedding text-sm font-medium text-white md:text-2xl">
             С какво ще се напия:
           </label>
           <div className="flex flex-col items-start">
@@ -91,11 +97,11 @@ export default function IndividualForm({
               <div className="relative mt-1 min-w-full">
                 <Listbox.Button
                   className="relative w-full cursor-pointer 
-                rounded-lg bg-white py-2 pl-3 pr-10 text-left text-sm shadow-md focus:outline-none
+                rounded-lg bg-white py-2 pl-3 pr-10 text-left font-wedding text-sm shadow-md focus:outline-none
                  focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75
                   focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 md:text-xl"
                 >
-                  <span className="block truncate whitespace-normal">
+                  <span className="block truncate whitespace-normal font-wedding">
                     {userData.drink_choices.length === 0
                       ? "Няма да пия нищо 😞"
                       : userData.drink_choices
@@ -115,7 +121,7 @@ export default function IndividualForm({
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="relative z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                  <Listbox.Options className="relative z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 font-wedding text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                     {drinks.map((drink) => (
                       <Listbox.Option
                         key={drink.id}
@@ -131,7 +137,7 @@ export default function IndividualForm({
                         {({ selected }) => (
                           <>
                             <span
-                              className={`block truncate ${
+                              className={`block truncate font-wedding ${
                                 selected ? "font-medium" : "font-normal"
                               }`}
                             >
@@ -158,18 +164,20 @@ export default function IndividualForm({
       )}
 
       <div className="mt-4 flex justify-between">
-        <label className="undefined block text-sm font-medium text-white md:text-2xl ">
+        <label className="undefined block font-wedding text-sm font-medium text-white md:text-2xl ">
           Имам алергии:
         </label>
         <div className="flex justify-center">
-          <div className="mr-2 flex-1 text-sm text-white md:text-2xl">Не </div>
+          <div className="mr-2 flex-1 font-wedding text-sm text-white md:text-2xl">
+            Не{" "}
+          </div>
           <div className="flex-1">
             <Switch
               checked={hasAlergies}
               onChange={setHasAlergies}
               className={`${
                 hasAlergies ? "bg-amber-500" : "bg-black"
-              } relative inline-flex h-6 w-11 items-center rounded-full`}
+              } relative inline-flex h-6 w-11 items-center rounded-full font-wedding`}
             >
               <span
                 className={`${
@@ -178,12 +186,14 @@ export default function IndividualForm({
               />
             </Switch>
           </div>
-          <div className="ml-2 flex-1 text-sm text-white md:text-2xl">Да</div>
+          <div className="ml-2 flex-1 font-wedding text-sm text-white md:text-2xl">
+            Да
+          </div>
         </div>
       </div>
       {hasAlergies && (
         <div>
-          <label className="undefined block text-sm font-medium text-white md:text-xl">
+          <label className="undefined block font-wedding text-sm font-medium text-white md:text-xl">
             Моля избройте алергиите си:
           </label>
           <div className="flex flex-col items-start">
@@ -197,14 +207,14 @@ export default function IndividualForm({
               value={userData.alergies || ""}
               type="text"
               name="name"
-              className="mt-1 block w-full rounded-md border-gray-300 p-2 text-sm shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 md:text-xl"
+              className=" mt-1 block w-full rounded-md border-gray-300 p-2 font-wedding text-sm shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 md:text-xl"
             />
           </div>
         </div>
       )}
 
       <div className="mt-4">
-        <label className="undefined block text-sm font-medium text-white md:text-2xl">
+        <label className="undefined block font-wedding text-sm font-medium text-white md:text-2xl">
           Какво ще хапвам:
         </label>
         <div className="flex flex-col items-start">
@@ -220,7 +230,7 @@ export default function IndividualForm({
             <div className="relative mt-1 min-w-full">
               <Listbox.Button
                 className="relative w-full cursor-pointer
-              rounded-lg bg-white py-2 pl-3 pr-10 text-left text-sm shadow-md 
+              rounded-lg bg-white py-2 pl-3 pr-10 text-left font-wedding text-sm shadow-md
               focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white
                focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 md:text-xl"
               >
@@ -247,7 +257,7 @@ export default function IndividualForm({
                     <Listbox.Option
                       key={food.id}
                       className={({ active }) =>
-                        `cursor-pointer select-none py-2 pl-10 pr-4 text-sm md:text-xl ${
+                        `cursor-pointer select-none py-2 pl-10 pr-4 font-wedding text-sm md:text-xl ${
                           active
                             ? "bg-amber-100 text-amber-900"
                             : "text-gray-900"
@@ -257,10 +267,10 @@ export default function IndividualForm({
                     >
                       {({ selected }) => (
                         <>
-                          <span className="block truncate whitespace-normal text-sm md:text-xl">
+                          <span className=" food-wedding block truncate whitespace-normal text-sm md:text-xl">
                             {food.name}
                           </span>
-                          <span className="ml-3 block truncate whitespace-normal text-xs md:text-sm">
+                          <span className="food-wedding ml-3 block truncate whitespace-normal text-xs md:text-sm">
                             {food.description}
                           </span>
                           {selected ? (
