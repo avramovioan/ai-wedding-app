@@ -23,7 +23,7 @@ export default function IndividualForm({
   const [hasAlergies, setHasAlergies] = useState(
     userData.alergies !== null && userData.alergies?.length !== 0
   );
-  console.log(userData);
+  //console.log(userData);
   return (
     <div className="mb-9 mt-2 rounded-2xl border border-amber-500 p-2 drop-shadow-md">
       <div>
@@ -50,7 +50,7 @@ export default function IndividualForm({
           Ще присъствам?
         </label>
         <div className="flex justify-center">
-          <div className="mr-2 flex-1 text-white"> Не</div>
+          <div className="mr-2 flex-1 text-sm text-white md:text-2xl"> Не</div>
           <Switch
             checked={userData.is_coming}
             onChange={() => {
@@ -69,7 +69,7 @@ export default function IndividualForm({
               } inline-block h-4 w-4 transform rounded-full bg-white transition`}
             />
           </Switch>
-          <div className="ml-2 flex-1 text-white"> Да</div>
+          <div className="ml-2 flex-1 text-sm text-white md:text-2xl"> Да</div>
         </div>
       </div>
       {!userData.is_child && (
@@ -162,7 +162,7 @@ export default function IndividualForm({
           Имам алергии:
         </label>
         <div className="flex justify-center">
-          <div className="mr-2 flex-1 text-white">Не </div>
+          <div className="mr-2 flex-1 text-sm text-white md:text-2xl">Не </div>
           <div className="flex-1">
             <Switch
               checked={hasAlergies}
@@ -178,7 +178,7 @@ export default function IndividualForm({
               />
             </Switch>
           </div>
-          <div className="ml-2 flex-1 text-white"> Да</div>
+          <div className="ml-2 flex-1 text-sm text-white md:text-2xl">Да</div>
         </div>
       </div>
       {hasAlergies && (

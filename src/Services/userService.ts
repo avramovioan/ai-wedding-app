@@ -16,11 +16,11 @@ export async function getUserGroup(
   if (usersJson !== null && usersJson !== "[]") {
     const storedUsers: UserData["Row"][] = JSON.parse(usersJson);
     if (storedUsers.every((user) => user.guest_id === guestId)) {
-      console.log("Getting users from storage");
+      //console.log("Getting users from storage");
       return storedUsers;
     }
   }
-  console.log("Getting users from db");
+  // console.log("Getting users from db");
   const { data, error } = await supabase.functions.invoke("get-users", {
     headers: {
       guest_id: guestId,
@@ -29,7 +29,7 @@ export async function getUserGroup(
   if (error != null) {
     throw error;
   }
-  console.log(data);
+  //console.log(data);
   if (data == null) throw new Error("Нещо се обърка с хората.");
   cacheUsers(data);
   return data;

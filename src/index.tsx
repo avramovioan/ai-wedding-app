@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import InvitationForm from "./Components/InvitationForm";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -13,7 +12,6 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/form" element={<InvitationForm />}></Route>
         <Route path="/" element={<App />}></Route>
         <Route path="*" element={<Navigate to={"/"} replace />}></Route>
         <Route path="/invitation.pdf" />

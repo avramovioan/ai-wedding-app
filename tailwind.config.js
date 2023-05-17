@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       serif: "Times New Roman",
+      wedding: "Shantell Sans",
     },
     extend: {
       objectPosition: {

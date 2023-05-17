@@ -30,7 +30,7 @@ export default function InvitationFormModal({
           x
         </button>
         <div className="h-full w-full overflow-y-scroll">
-          <InvitationForm />
+          <InvitationForm closeAction={onClose} />
         </div>
       </div>
     </div>

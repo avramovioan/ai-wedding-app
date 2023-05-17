@@ -7,7 +7,11 @@ import IndividualForm from "./IndividualForm";
 import { getUserGroup, updateUsersGroup } from "../Services/userService";
 import { useLocation } from "react-router-dom";
 
-export default function InvitationForm() {
+export default function InvitationForm({
+  closeAction,
+}: {
+  closeAction: () => void;
+}) {
   const [formData, setFormData] = useState<{
     [userId: number]: UserDataWithDrinkAndFoodData;
   }>({});
@@ -106,7 +110,8 @@ export default function InvitationForm() {
                 <div className="mb-4 flex items-center justify-start">
                   <button
                     type="submit"
-                    className="false inline-flex items-center rounded-md border border-transparent bg-amber-600 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out active:bg-gray-900 md:text-lg"
+                    className="inline-flex items-center rounded-md border border-transparent bg-amber-600 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out active:bg-gray-900 md:text-lg"
+                    onClick={closeAction}
                   >
                     Потвърди
                   </button>

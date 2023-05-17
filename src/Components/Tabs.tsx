@@ -69,10 +69,11 @@ const invitation: { text: string[] }[] = [
 
 const scheduleData = [
   //{ hour: "11:00", event: "Започва великото обличане" },
-  { hour: "13:00", event: "Крадеца на булки" },
-  { hour: "14:20", event: "Усмивка, снимка, щрак" },
-  { hour: "17:20", event: "Да! Да!" },
-  { hour: "18:00", event: "Поздрави" },
+  //{ hour: "13:00", event: "Крадеца на булки" },
+  { hour: "14:00", event: "Фотосесия" },
+  { hour: "17:20", event: "Изнесен ритуал в Сватбена зала Роял " },
+  { hour: "18:00", event: "Welcome drink" },
+  { hour: "19:30", event: "Начало на купона" },
 ];
 
 const nearbyHotels = [
@@ -148,22 +149,33 @@ export default function Tabs() {
         </Tab.List>
         <Tab.Panels className="mt-4 ">
           <Tab.Panel className={classNames("focus:outline-none")}>
-            <div className="mx-5 mt-10 flex flex-col items-center text-base text-white md:text-2xl">
+            <div className="mx-5 mt-5 flex flex-col items-center font-wedding text-base text-white md:text-2xl">
               <div className="w-full max-w-md">
-                <div className="grid grid-cols-3 gap-10 gap-x-5">
+                <div className="grid grid-cols-3 gap-x-10">
                   {scheduleData.map((item, index) => (
                     <React.Fragment key={index}>
-                      <div className="col-span-1 font-bold">{item.hour} ч.</div>
-                      <div className="col-span-2 col-start-2 items-end">
+                      <div className="col-span-1 flex justify-end py-3">
+                        {item.hour} ч.
+                      </div>
+                      <div
+                        className={classNames(
+                          "col-span-2 col-start-2 items-end",
+                          index === 1 ? "py-1.2" : "py-3"
+                        )}
+                      >
                         {item.event}
                       </div>
                     </React.Fragment>
                   ))}
                 </div>
+                <p className="mt-5 text-xs md:text-lg">
+                  *Основният цвят на сватбата ще бъде тъмно зелено, затова ви
+                  молим да се насочите към други цветове за вашите тоалети
+                </p>
               </div>
             </div>
           </Tab.Panel>
-          <Tab.Panel className={classNames("focus:outline-none")}>
+          <Tab.Panel className={classNames("mt-8 focus:outline-none")}>
             {invitation.map((textObj, idx) => (
               <div className="mt-5 w-full flex-col" key={idx}>
                 {textObj.text.map((line, idx) => (
@@ -171,7 +183,7 @@ export default function Tabs() {
                     key={idx}
                     className="flex w-full justify-center text-base italic text-white md:text-2xl"
                   >
-                    <p className="whitespace-nowrap font-serif">{line}</p>
+                    <p className="whitespace-nowrap font-wedding">{line}</p>
                   </div>
                 ))}
               </div>

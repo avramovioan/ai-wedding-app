@@ -29,12 +29,12 @@ export async function getDrinks(): Promise<DrinkData["Row"][]> {
   if (drinksJson !== null && drinksJson !== "[]") {
     return JSON.parse(drinksJson);
   }
-  console.log("Getting drinks");
+  //console.log("Getting drinks");
   const { data, error } = await supabase.from("drink").select("*");
   if (error != null) {
     throw error;
   }
-  console.log(data);
+  //console.log(data);
   if (data == null) throw new Error("Нещо се обърка с пиийнито.");
   cacheDrinks(data);
   return data;
