@@ -20,7 +20,7 @@ const invitation: { text: string[] }[] = [
   {
     text: [
       "В парка в онзи слънчев ден",
-      "се срещтна ти с мен.",
+      "се срещна ти с мен.",
       "И всичко почна като на игра,",
       "но накрая някой изгоря!",
     ],
@@ -28,7 +28,7 @@ const invitation: { text: string[] }[] = [
   {
     text: [
       "Ето че се влюби ти в мен,",
-      "а аз отдавна вече бях в плен.",
+      "а и аз отдавна бях в плен.",
       "Така започна нашата история",
       "изпълнена с любов и еуфория! ",
     ],
@@ -43,7 +43,7 @@ const invitation: { text: string[] }[] = [
   },
   {
     text: [
-      "Тъй като на Валя е вината",
+      "Тъй като на Валя е вината,",
       "сега тя ще е кумата!",
       "A Весо с пръстена помогна",
       "и кумстване го погна!",
@@ -148,7 +148,7 @@ export default function Tabs() {
         </Tab.List>
         <Tab.Panels className="mt-4 ">
           <Tab.Panel className={classNames("focus:outline-none")}>
-            <div className="mx-5 mt-10 flex flex-col items-center text-xl text-white md:text-2xl">
+            <div className="mx-5 mt-10 flex flex-col items-center text-base text-white md:text-2xl">
               <div className="w-full max-w-md">
                 <div className="grid grid-cols-3 gap-10 gap-x-5">
                   {scheduleData.map((item, index) => (
