@@ -30,6 +30,7 @@ export default function IndividualForm({
         <label className="undefined block font-wedding text-sm font-medium text-white md:text-2xl ">
           Име
         </label>
+
         <div className="flex flex-col items-start">
           <input
             onChange={(evt) => {
@@ -44,6 +45,9 @@ export default function IndividualForm({
             className="mt-1 block w-full rounded-md border-gray-300 p-2 font-wedding text-sm shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 md:text-xl"
           />
         </div>
+        <p className="font-wedding text-xs text-white md:text-base">
+          <i>при грашка в името, моля коригирайте</i>
+        </p>
       </div>
       <div className="mt-4 flex justify-between">
         <label className="undefined block font-wedding text-sm font-medium  text-white  md:text-2xl">

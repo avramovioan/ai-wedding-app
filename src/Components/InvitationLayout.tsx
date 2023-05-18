@@ -5,7 +5,7 @@ import us from "../us.jpg";
 import InvitationFormModal from "./InvitaitonFormModal";
 
 export default function InvitationLayout() {
-  const [showInvitation, setShowInvitation] = useState(false); //TODO: change to true
+  const [showInvitation, setShowInvitation] = useState(true); //TODO: change to true
   const [showInvitationForm, setShowInvitationForm] = useState(false);
 
   return (
