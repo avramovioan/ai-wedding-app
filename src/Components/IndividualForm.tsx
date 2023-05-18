@@ -261,7 +261,7 @@ export default function IndividualForm({
                     <Listbox.Option
                       key={food.id}
                       className={({ active }) =>
-                        `cursor-pointer select-none py-2 pl-10 pr-4 font-wedding text-sm md:text-xl ${
+                        `relative cursor-pointer select-none py-2 pl-10 pr-4 font-wedding text-sm md:text-xl ${
                           active
                             ? "bg-amber-100 text-amber-900"
                             : "text-gray-900"
@@ -271,20 +271,24 @@ export default function IndividualForm({
                     >
                       {({ selected }) => (
                         <>
-                          <span className=" food-wedding block truncate whitespace-normal text-sm md:text-xl">
-                            {food.name}
-                          </span>
-                          <span className="food-wedding ml-3 block truncate whitespace-normal text-xs md:text-sm">
-                            {food.description}
-                          </span>
-                          {selected ? (
-                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-                              <CheckIcon
-                                className="h-5 w-5"
-                                aria-hidden="true"
-                              />
-                            </span>
-                          ) : null}
+                          <div className="w-full flex-col">
+                            {selected ? (
+                              <span className="absolute left-3 top-3 flex-none text-amber-600">
+                                <CheckIcon
+                                  className="h-5 w-5"
+                                  aria-hidden="true"
+                                />
+                              </span>
+                            ) : null}
+                            <div className="flex-1 flex-col">
+                              <span className="food-wedding block flex-1 truncate whitespace-normal text-sm md:text-xl">
+                                {food.name}
+                              </span>
+                              <span className="food-wedding ml-3 block flex-1 truncate whitespace-normal text-xs md:text-sm">
+                                {food.description}
+                              </span>
+                            </div>
+                          </div>
                         </>
                       )}
                     </Listbox.Option>
