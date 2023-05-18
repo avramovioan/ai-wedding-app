@@ -60,6 +60,7 @@ serve(async (req) => {
       ...updatedData[i],
       guest_id: usersToUpdate[existingItemIndex].guest_id,
       is_child: usersToUpdate[existingItemIndex].is_child,
+      has_replied: true,
     });
   }
 
