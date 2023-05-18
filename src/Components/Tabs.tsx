@@ -207,28 +207,6 @@ export default function Tabs() {
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
-      {/* <div className="h-24 w-24">
-        <img src={invitationIcon} />
-      </div>
-      <div className="h-24 w-24">
-        <img src={rsvp} />
-      </div> */}
     </div>
   );
-}
-
-//"text-blue-100 hover:bg-white/[0.12] hover:text-white"
-{
-  /* <div className="h-36 w-full flex-row items-center justify-center align-middle">
-<iframe
-  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d740.97576564259!2d24.8500706!3d42.0238119!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd91b7a001859%3A0x5749d65054a8361a!2z0JHQsNC70L3QsCDQl9Cw0LvQsCBSb3lhbA!5e0!3m2!1sen!2sbg!4v1684249927287!5m2!1sen!2sbg"
-  className="h-full w-full"
-  loading="lazy"
-  allowFullScreen={true}
-></iframe>
-<div className="mt-5 font-wedding text-xs text-white md:text-lg">
-  *Таксита от Пловдив и Асеновград изпълняват поръчки до
-  сватбената зала
-</div>
-</div> */
 }
