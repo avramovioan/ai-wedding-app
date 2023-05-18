@@ -46,7 +46,7 @@ export default function IndividualForm({
           />
         </div>
         <p className="font-wedding text-xs text-white md:text-base">
-          <i>при грашка в името, моля коригирайте</i>
+          <i>при грешка в името, моля коригирайте</i>
         </p>
       </div>
       <div className="mt-4 flex justify-between">
