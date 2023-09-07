@@ -77,6 +77,7 @@ export interface Database {
           drink_choices: number[] | null
           food_choice: number | null
           guest_id: string
+          has_replied: boolean | null
           id: number
           is_child: boolean
           is_coming: boolean
@@ -87,6 +88,7 @@ export interface Database {
           drink_choices?: number[] | null
           food_choice?: number | null
           guest_id: string
+          has_replied?: boolean | null
           id?: number
           is_child?: boolean
           is_coming?: boolean
@@ -97,6 +99,7 @@ export interface Database {
           drink_choices?: number[] | null
           food_choice?: number | null
           guest_id?: string
+          has_replied?: boolean | null
           id?: number
           is_child?: boolean
           is_coming?: boolean

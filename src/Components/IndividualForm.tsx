@@ -30,6 +30,7 @@ export default function IndividualForm({
         <label className="undefined block font-wedding text-sm font-medium text-white md:text-2xl ">
           Име
         </label>
+
         <div className="flex flex-col items-start">
           <input
             onChange={(evt) => {
@@ -44,6 +45,9 @@ export default function IndividualForm({
             className="mt-1 block w-full rounded-md border-gray-300 p-2 font-wedding text-sm shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 md:text-xl"
           />
         </div>
+        <p className="font-wedding text-xs text-white md:text-base">
+          <i>при грешка в името, моля коригирайте</i>
+        </p>
       </div>
       <div className="mt-4 flex justify-between">
         <label className="undefined block font-wedding text-sm font-medium  text-white  md:text-2xl">
@@ -257,7 +261,7 @@ export default function IndividualForm({
                     <Listbox.Option
                       key={food.id}
                       className={({ active }) =>
-                        `cursor-pointer select-none py-2 pl-10 pr-4 font-wedding text-sm md:text-xl ${
+                        `relative cursor-pointer select-none py-2 pl-10 pr-4 font-wedding text-sm md:text-xl ${
                           active
                             ? "bg-amber-100 text-amber-900"
                             : "text-gray-900"
@@ -267,20 +271,24 @@ export default function IndividualForm({
                     >
                       {({ selected }) => (
                         <>
-                          <span className=" food-wedding block truncate whitespace-normal text-sm md:text-xl">
-                            {food.name}
-                          </span>
-                          <span className="food-wedding ml-3 block truncate whitespace-normal text-xs md:text-sm">
-                            {food.description}
-                          </span>
-                          {selected ? (
-                            <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
-                              <CheckIcon
-                                className="h-5 w-5"
-                                aria-hidden="true"
-                              />
-                            </span>
-                          ) : null}
+                          <div className="w-full flex-col">
+                            {selected ? (
+                              <span className="absolute left-3 top-3 flex-none text-amber-600">
+                                <CheckIcon
+                                  className="h-5 w-5"
+                                  aria-hidden="true"
+                                />
+                              </span>
+                            ) : null}
+                            <div className="flex-1 flex-col">
+                              <span className="food-wedding block flex-1 truncate whitespace-normal text-sm md:text-xl">
+                                {food.name}
+                              </span>
+                              <span className="food-wedding ml-3 block flex-1 truncate whitespace-normal text-xs md:text-sm">
+                                {food.description}
+                              </span>
+                            </div>
+                          </div>
                         </>
                       )}
                     </Listbox.Option>

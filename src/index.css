@@ -15,6 +15,10 @@ body,
   flex-direction: column;
 }
 
+button {
+  -webkit-tap-highlight-color: transparent; /* for removing the highlight */
+}
+
 
 
 @media screen and (min-width: 768px) {
