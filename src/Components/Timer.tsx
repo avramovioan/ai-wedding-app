@@ -48,7 +48,3 @@ export default function Timer(props: { weddingDate: Date }) {
     </div>
   );
 }
-
-{
-  /* {`${days} ${daysWord} : ${hours} ${hoursWord} : ${minutes} ${minutesWord} : ${seconds} ${secondsWord}`} */
-}
