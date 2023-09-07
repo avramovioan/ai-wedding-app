@@ -24,7 +24,7 @@ export default function InvitationLayout() {
             Покана
           </span>
         </button>
-        <div className="absolute -top-[8rem] -right-[2rem] h-36 w-36 animate-ping  rounded-full bg-gradient-to-tl from-[rgb(72,116,101)] to-[#1d2e28] md:-right-[4rem] md:-top-[11rem] md:h-[15rem] md:w-[15rem]"></div>
+        {/* <div className="absolute -top-[8rem] -right-[2rem] h-36 w-36 animate-ping  rounded-full bg-gradient-to-tl from-[rgb(72,116,101)] to-[#1d2e28] md:-right-[4rem] md:-top-[11rem] md:h-[15rem] md:w-[15rem]"></div>
         <button
           className="absolute -top-[15.5rem] -right-[6.5rem] h-72 w-72 rounded-full bg-gradient-to-tl from-[rgb(72,116,101)] to-[#1d2e28] md:-top-[25rem] 
             md:-right-[14rem] md:h-[30rem] md:w-[30rem]"
@@ -33,7 +33,7 @@ export default function InvitationLayout() {
           <span className="absolute bottom-[0.6rem] left-[5.3rem] font-wedding text-lg italic text-white md:bottom-[1.8rem] md:left-[7.5rem] md:text-3xl">
             Потвърди
           </span>
-        </button>
+        </button> */}
       </div>
 
       <Transition
@@ -71,19 +71,4 @@ export default function InvitationLayout() {
       </Transition>
     </div>
   );
-}
-
-{
-  /* <div className="absolute -top-[8rem] -left-[8rem] h-72 w-72 rounded-full ">
-<img
-  src={rose}
-  className="h-full w-full animate-[spin_15s_linear_infinite]"
-/>
-<button
-  className="absolute bottom-[5rem] right-[3rem] text-lg italic text-[#1d2e28]  md:text-3xl"
-  onClick={() => setShowInvitation(true)}
->
-  Покана
-</button>
-</div> */
 }

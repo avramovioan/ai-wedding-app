@@ -148,7 +148,7 @@ export default function Tabs() {
           </Tab>
         </Tab.List>
         <Tab.Panels className="mt-4 ">
-          <Tab.Panel className={classNames("focus:outline-none")}>
+          {/* <Tab.Panel className={classNames("focus:outline-none")}>
             <div className="mx-5 mt-5 flex flex-col items-center font-wedding text-base text-white md:text-2xl">
               <div className="w-full max-w-md">
                 <div className="grid grid-cols-3 gap-x-10">
@@ -174,6 +174,13 @@ export default function Tabs() {
                 </p>
               </div>
             </div>
+          </Tab.Panel> */}
+          <Tab.Panel className={classNames("focus:outline-none")}>
+            <div className="flex w-full justify-center p-5 text-base italic text-white md:text-2xl">
+              <p className="whitespace-nowrap font-wedding">
+                Благодарим Ви, че бяхте част от нашия специялен ден!
+              </p>
+            </div>
           </Tab.Panel>
           <Tab.Panel className={classNames("mt-8 focus:outline-none")}>
             {invitation.map((textObj, idx) => (
@@ -198,10 +205,10 @@ export default function Tabs() {
                   loading="lazy"
                   allowFullScreen={true}
                 ></iframe>
-                <div className="mt-5 w-full flex-1 font-wedding text-xs text-white md:text-lg">
+                {/* <div className="mt-5 w-full flex-1 font-wedding text-xs text-white md:text-lg">
                   *Таксита от Пловдив и Асеновград изпълняват поръчки до
                   сватбената зала
-                </div>
+                </div> */}
               </div>
             </div>
           </Tab.Panel>
