@@ -1,5 +1,5 @@
 import { Tab } from "@headlessui/react";
-import rings from "../rings.svg";
+import { ReactComponent as Rings } from "../rings.svg";
 import wedding_location from "../wedding_location.svg";
 import schedule from "../schedule.svg";
 
@@ -19,50 +19,32 @@ type POST = {
 const invitation: { text: string[] }[] = [
   {
     text: [
-      "В парка в онзи слънчев ден",
-      "се срещна ти с мен.",
-      "И всичко почна като на игра,",
-      "но накрая някой изгоря!",
+      "На рожден ден сред смях и светлина",
+      "съдбата тихо свърза две сърца.",
+      "Една искра, един случаен миг —",
+      "началото на нашия свят красив.",
     ],
   },
   {
     text: [
-      "Ето че се влюби ти в мен,",
-      "а и аз отдавна бях в плен.",
-      "Така започна нашата история",
-      "изпълнена с любов и еуфория! ",
+      "Любов растеше с всеки общ ден,",
+      "в усмивки, спомени и топъл плен.",
+      "На 21.06.2026 казваме „да“ — ръка в ръка,",
+      "с мечти, надежда и една съдба.",
     ],
   },
   {
     text: [
-      "След две години вече се реши,",
-      "пък и влюбени сме до уши,",
-      "та сватба ще направим",
-      "и хич няма да се бавим!",
+      "До нас ще бъде Анна — обич, чест,,",
+      "най-близка, вярна кума без тест.",
+      "А до младоженеца — брат любим,",
+      "Алекс — кум, опора и път незаменим.",
     ],
   },
   {
     text: [
-      "Тъй като на Валя е вината,",
-      "сега тя ще е кумата!",
-      "A Весо с пръстена помогна",
-      "и кумстване го погна!",
-    ],
-  },
-  {
-    text: [
-      "На 25.08.2023 (петък) ще е тържеството,",
-      "затова си стягай облеклото!",
-      "И горе в дясно потвърди,",
-      "защото поканен си и ти!",
-    ],
-  },
-  {
-    text: [
-      "Но недей да мислиш за подарък,",
-      "просто постави го в плика малък!",
-      "И на сватбата ни ти ела,",
-      "че да падне чудна веселба!",
+      "С любов ви каним да сте част от нас",
+      "в деня, когато „ние“ става „завинаги“ за нас.",
     ],
   },
 ];
@@ -70,10 +52,13 @@ const invitation: { text: string[] }[] = [
 const scheduleData = [
   //{ hour: "11:00", event: "Започва великото обличане" },
   //{ hour: "13:00", event: "Крадеца на булки" },
-  { hour: "14:00", event: "Фотосесия" },
-  { hour: "17:20", event: "Изнесен ритуал в Сватбена зала Роял " },
+  { hour: "14:30", event: "Граждански брак (общ. Тракия)" },
+  {
+    hour: "15:30",
+    event: 'Църковен брак (храм "Свето Преображение Господне")',
+  },
   { hour: "18:00", event: "Welcome drink" },
-  { hour: "19:30", event: "Начало на купона" },
+  { hour: "19:00", event: "Начало на купона" },
 ];
 
 const nearbyHotels = [
@@ -91,7 +76,7 @@ export default function Tabs() {
             className={({ selected }) =>
               classNames(
                 "mx-8 border-b-4 py-2.5 text-xl duration-500 hover:cursor-pointer focus:outline-none focus:outline-0 md:mx-12 ",
-                selected ? "border-b-amber-500" : "border-b-white"
+                selected ? "border-[rgb(82,40,133)]" : "border-b-white"
               )
             }
           >
@@ -111,7 +96,7 @@ export default function Tabs() {
             className={({ selected }) =>
               classNames(
                 "mx-8 border-b-4 py-2.5 text-xl duration-500 hover:cursor-pointer focus:outline-none focus:outline-0 md:mx-12 ",
-                selected ? "border-b-amber-500" : "border-b-white"
+                selected ? "border-[rgb(82,40,133)]" : "border-b-white"
               )
             }
           >
@@ -123,7 +108,8 @@ export default function Tabs() {
                   : "hover:-translate-y-3 hover:scale-125"
               )}
             >
-              <img className="h-full w-full" src={rings} />
+              <Rings className="h-full w-full text-purple-400" />
+              {/* <img className="h-full w-full" src={Rings} /> */}
             </div>
           </Tab>
           <Tab
@@ -131,7 +117,7 @@ export default function Tabs() {
             className={({ selected }) =>
               classNames(
                 "mx-8 border-b-4 py-2.5 text-xl duration-500 hover:cursor-pointer focus:outline-none focus:outline-0 md:mx-12 ",
-                selected ? "border-b-amber-500" : "border-b-white"
+                selected ? "border-[rgb(82,40,133)]" : "border-b-white"
               )
             }
           >
@@ -148,7 +134,7 @@ export default function Tabs() {
           </Tab>
         </Tab.List>
         <Tab.Panels className="mt-4 ">
-          {/* <Tab.Panel className={classNames("focus:outline-none")}>
+          <Tab.Panel className={classNames("focus:outline-none")}>
             <div className="mx-5 mt-5 flex flex-col items-center font-wedding text-base text-white md:text-2xl">
               <div className="w-full max-w-md">
                 <div className="grid grid-cols-3 gap-x-10">
@@ -168,20 +154,16 @@ export default function Tabs() {
                     </React.Fragment>
                   ))}
                 </div>
-                <p className="mt-5 text-xs md:text-lg">
-                  *Основният цвят на сватбата ще бъде тъмно зелено, затова ви
-                  молим да се насочите към други цветове за вашите тоалети
-                </p>
               </div>
             </div>
-          </Tab.Panel> */}
-          <Tab.Panel className={classNames("focus:outline-none")}>
+          </Tab.Panel>
+          {/* <Tab.Panel className={classNames("focus:outline-none")}>
             <div className="flex w-full justify-center p-5 text-base italic text-white md:text-2xl">
               <p className="whitespace-nowrap font-wedding">
                 Благодарим Ви, че бяхте част от нашия специялен ден!
               </p>
             </div>
-          </Tab.Panel>
+          </Tab.Panel> */}
           <Tab.Panel className={classNames("mt-8 focus:outline-none")}>
             {invitation.map((textObj, idx) => (
               <div className="mt-5 w-full flex-col" key={idx}>
@@ -200,7 +182,7 @@ export default function Tabs() {
             <div className="mx-5 mt-5 flex flex-col items-center font-wedding text-base text-white md:text-2xl">
               <div className="w-full">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d740.97576564259!2d24.8500706!3d42.0238119!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd91b7a001859%3A0x5749d65054a8361a!2z0JHQsNC70L3QsCDQl9Cw0LvQsCBSb3lhbA!5e0!3m2!1sen!2sbg!4v1684249927287!5m2!1sen!2sbg"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1524.948103454217!2d24.85436558535646!3d42.0244764314916!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd9b5c6b1bd6b%3A0x9669f9fa5226d54a!2sRiva%20Restaurant!5e0!3m2!1sen!2sbg!4v1769294221516!5m2!1sen!2sbg"
                   className="h-full w-full flex-1"
                   loading="lazy"
                   allowFullScreen={true}

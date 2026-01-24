@@ -1,4 +1,4 @@
-import { ReactComponent as Invitation } from "../wedding-invitation.svg";
+import invitationPng from "../invitation.png";
 import useWindowSize from "./useWindowSize";
 import { Link } from "react-router-dom";
 
@@ -28,24 +28,19 @@ function InvitationModal(props: { onClose: () => void }) {
           x
         </button>
 
-        <Invitation />
+        <img
+          src={invitationPng}
+          alt="Wedding invitation"
+          className="h-full w-full object-contain"
+        />
 
-        {/* <a
-          href="../invitation.pdf"
-          download={true}
-          className="text-1xl font-semibold text-slate-300 duration-150  hover:scale-110 md:text-2xl"
-          type="button"
-        >
-          Свали PDF
-        </a> */}
-        <Link
+        <a
+          href={invitationPng}
+          download="wedding-invitation.png"
           className="font-wedding text-lg font-semibold text-slate-300 duration-150 md:text-xl"
-          to="/invitation.pdf"
-          target="_blank"
-          download
         >
-          Свали PDF
-        </Link>
+          Свали Поканата
+        </a>
       </div>
     </div>
   );

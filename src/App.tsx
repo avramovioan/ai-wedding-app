@@ -9,7 +9,7 @@ export default function App() {
   const queryParams = new URLSearchParams(location.search);
   const guestId = queryParams.get("guestId");
 
-  const [validUUID, setValidUUID] = useState(false);
+  const [validUUID, setValidUUID] = useState(true);
 
   useEffect(() => {
     if (guestId === null) return;

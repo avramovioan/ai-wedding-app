@@ -10,7 +10,7 @@ export default function BaseView() {
           <span>Вече измиаха</span>
         </div>
         <div className="m-5 p-4">
-          <Timer weddingDate={new Date(2023, 7, 25, 17, 30)} />
+          <Timer weddingDate={new Date(2026, 6, 21, 18, 0)} />
         </div>
         <div className="m-5 flex justify-center p-4 font-wedding">
           <span>от нашата сватба!</span>
