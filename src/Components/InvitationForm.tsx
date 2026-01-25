@@ -81,7 +81,7 @@ export default function InvitationForm({
   }, [getDrinksResponse, getFoodsRespnse, getUsersResponse]);
 
   return (
-    <div className="flex flex-col items-center rounded-lg bg-[#1d2e28]  px-3 md:px-6">
+    <div className="flex flex-col items-center rounded-lg  bg-[rgb(149,125,197)]  px-3 md:px-6">
       <div className="w-full md:py-4">
         {getDrinksStatus.loaded &&
           getFoodsStatus.loaded &&
@@ -109,7 +109,7 @@ export default function InvitationForm({
               <div className="mb-4 flex items-center justify-start">
                 <button
                   type="submit"
-                  className="inline-flex items-center rounded-md border border-transparent bg-amber-600 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out active:bg-gray-900 md:text-lg"
+                  className="inline-flex items-center rounded-md border border-transparent bg-[rgb(47,22,98)] px-4 py-2 text-sm font-semibold uppercase tracking-widest text-white transition duration-150 ease-in-out active:bg-gray-900 md:text-lg"
                   onClick={closeAction}
                 >
                   Потвърди

@@ -25,7 +25,7 @@ export default function IndividualForm({
   );
   //console.log(userData);
   return (
-    <div className="mb-9 mt-2 rounded-2xl border border-amber-500 p-2 drop-shadow-md">
+    <div className="mb-9 mt-2 rounded-2xl border border-[rgb(47,22,98)] p-2 drop-shadow-md">
       <div>
         <label className="undefined block font-wedding text-sm font-medium text-white md:text-2xl ">
           Име
@@ -67,7 +67,7 @@ export default function IndividualForm({
               });
             }}
             className={`${
-              userData.is_coming ? "bg-amber-500" : "bg-black"
+              userData.is_coming ? "bg-[rgb(59,221,97)]" : "bg-[rgb(47,22,98)]"
             } relative inline-flex h-6 w-11 items-center rounded-full font-wedding`}
           >
             <span
@@ -180,7 +180,7 @@ export default function IndividualForm({
               checked={hasAlergies}
               onChange={setHasAlergies}
               className={`${
-                hasAlergies ? "bg-amber-500" : "bg-black"
+                hasAlergies ? "bg-[rgb(59,221,97)]" : "bg-[rgb(47,22,98)]"
               } relative inline-flex h-6 w-11 items-center rounded-full font-wedding`}
             >
               <span
@@ -273,7 +273,7 @@ export default function IndividualForm({
                         <>
                           <div className="w-full flex-col">
                             {selected ? (
-                              <span className="absolute left-3 top-3 flex-none text-amber-600">
+                              <span className="absolute left-3 top-3 flex-none text-[rgb(47,22,98)]">
                                 <CheckIcon
                                   className="h-5 w-5"
                                   aria-hidden="true"
