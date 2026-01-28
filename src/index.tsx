@@ -8,7 +8,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-document.title = "AIWedding";
+document.title = "Pesho & Lili Wedding";
 
 root.render(
   <React.StrictMode>
