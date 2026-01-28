@@ -10,8 +10,11 @@ export default function InvitationLayout() {
 
   return (
     <div className="relative z-50">
-      <div className="h-96 w-full md:h-[50rem]">
-        <img className="h-full w-full object-cover object-[50%_10%]" src={us} />
+      <div className="extra-widescreen h-96 w-full md:h-[40rem]">
+        <img
+          className="h-full w-full object-cover object-[50%_18%] xl:object-[50%_10%]"
+          src={us}
+        />
       </div>
       <div className="absolute top-0 h-24 w-full overflow-hidden md:h-40">
         <button

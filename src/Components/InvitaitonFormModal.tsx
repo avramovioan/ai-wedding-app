@@ -7,9 +7,9 @@ export default function InvitationFormModal({
   onClose: () => void;
 }) {
   return (
-    <div className="fixed inset-0 z-30 flex flex-col items-center ">
+    <div className="fixed inset-0 z-30 flex w-full flex-col items-center ">
       <div className="fixed inset-0 bg-black bg-opacity-60" onClick={onClose} />
-      <div className="z-10 flex max-h-full flex-col px-2 py-4 pb-8">
+      <div className="z-10 flex max-h-full w-full flex-col px-2 py-4 pb-8 lg:w-1/2">
         <button
           onClick={onClose}
           className="duration-120 self-end font-wedding text-3xl font-bold leading-none text-slate-300 hover:scale-125"
