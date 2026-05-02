@@ -3,7 +3,7 @@ import Timer from "./Timer";
 
 export default function BaseView() {
   const [showInvitation, setShowInvitation] = useState(false);
-  const weddingDate = new Date(2026, 6, 21, 18, 0);
+  const weddingDate = new Date(2026, 5, 21, 18, 0);
   return (
     <div className="flex min-h-screen w-full items-center justify-center overflow-auto bg-gradient-to-r from-[rgb(193,181,215)] to-[rgb(149,125,197)]   ">
       <div className="flex-col justify-center font-wedding text-2xl text-white md:text-3xl">
