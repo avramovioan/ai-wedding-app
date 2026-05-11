@@ -17,7 +17,7 @@ function Main() {
           <div className="mt-4">
             <fieldset className="border-t border-slate-200">
               <legend className="mx-auto italic text-white">
-                <Timer weddingDate={new Date(2026, 6, 21, 18, 0)} />
+                <Timer weddingDate={new Date(2026, 5, 21, 18, 0)} />
               </legend>
             </fieldset>
           </div>
