@@ -7,13 +7,13 @@ export default function BachelorView() {
     runOnMountArgs: [],
   });
 
-  if (new Date().getTime() < new Date("2026-06-11T11:11:11.111Z").getTime()) {
-    return (
-      <main className="flex h-full items-center justify-center bg-gradient-to-tr from-[rgb(193,181,215)] to-[rgb(149,125,197)]">
-        <h1 className="font-wedding text-4xl text-white">Има време</h1>
-      </main>
-    );
-  }
+  // if (new Date().getTime() < new Date("2026-06-11T11:11:11.111Z").getTime()) {
+  //   return (
+  //     <main className="flex h-full items-center justify-center bg-gradient-to-tr from-[rgb(193,181,215)] to-[rgb(149,125,197)]">
+  //       <h1 className="font-wedding text-4xl text-white">Има време</h1>
+  //     </main>
+  //   );
+  // }
 
   return (
     <main className="flex h-screen flex-col items-center bg-gradient-to-tr from-[rgb(193,181,215)] to-[rgb(149,125,197)] p-4  font-wedding text-gray-900">
