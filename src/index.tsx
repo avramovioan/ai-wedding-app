@@ -5,22 +5,27 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import BachelorView from "./Components/BachelorView";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
 );
 document.title = "Pesho & Lili Wedding";
 
+const queryClient = new QueryClient();
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />}></Route>
-        <Route path="/bachelor" element={<BachelorView />}></Route>
-        <Route path="*" element={<Navigate to={"/"} replace />}></Route>
-        <Route path="/invitation.pdf" />
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}></Route>
+          <Route path="/bachelor" element={<BachelorView />}></Route>
+          <Route path="*" element={<Navigate to={"/"} replace />}></Route>
+          <Route path="/invitation.pdf" />
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   </React.StrictMode>,
 );
 

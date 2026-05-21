@@ -1,10 +1,12 @@
-import { useAsync } from "@m1st1ck/useasync";
 import { getQuests } from "../Services/questsService";
 import { cn } from "../utils/cn";
+import { useQuery } from "@tanstack/react-query";
 
 export default function BachelorView() {
-  const [, getQuestsStatus, getQuestsResponse] = useAsync(getQuests, {
-    runOnMountArgs: [],
+  const { status, data } = useQuery({
+    queryKey: ["getQuests"],
+    queryFn: getQuests,
+    refetchInterval: 9999,
   });
 
   // if (new Date().getTime() < new Date("2026-06-11T11:11:11.111Z").getTime()) {
@@ -20,8 +22,11 @@ export default function BachelorView() {
       <p className="mb-4 text-xl font-bold">
         Ама ти верно ли ми сканира тениската?
       </p>
-      {getQuestsStatus.loaded &&
-        getQuestsResponse?.map((quest) => (
+      {status === "error" && (
+        <div className="text-red-600">Ебало си е мамата</div>
+      )}
+      {status === "success" &&
+        data.map((quest) => (
           <div
             key={quest.id}
             className={cn(
