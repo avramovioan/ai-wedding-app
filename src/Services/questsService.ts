@@ -2,7 +2,10 @@ import { QuestData } from "../Types/QuestData";
 import supabase from "./supabaseClient";
 
 export async function getQuests(): Promise<QuestData["Row"][]> {
-  const { data, error } = await supabase.from("quests").select();
+  const { data, error } = await supabase
+    .from("quests")
+    .select()
+    .order("created_at");
   if (error != null) {
     throw error;
   }

@@ -56,16 +56,19 @@ export type Database = {
       quests: {
         Row: {
           completed: boolean
+          created_at: string | null
           description: string | null
           id: number
         }
         Insert: {
           completed?: boolean
+          created_at?: string | null
           description?: string | null
           id?: number
         }
         Update: {
           completed?: boolean
+          created_at?: string | null
           description?: string | null
           id?: number
         }
