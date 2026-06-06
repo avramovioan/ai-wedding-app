@@ -27,7 +27,7 @@ export default function BachelorView() {
   // }
 
   return (
-    <main className="flex flex-col items-center bg-[rgb(20,20,20)]">
+    <main className="no-scrollbar my-2 flex flex-col items-center bg-[rgb(20,20,20)]">
       <div className="mx-auto flex w-full max-w-sm flex-col gap-6">
         {/* ── Header — centered, full width ── */}
         <div className="animate-fade-in pt-2 text-center">
@@ -134,7 +134,7 @@ export default function BachelorView() {
                   "flex w-full animate-slide-up items-center gap-2 rounded-lg px-3 py-2.5 shadow-sm",
                   quest.completed
                     ? "border border-white/10 bg-white/5"
-                    : "border-l-4 border-purple-500 bg-white",
+                    : "border-l-4 border-purple-500 bg-[rgb(45,45,50)]",
                 )}
                 style={{ animationDelay: `${0.7 + i * 0.07}s` }}
               >
@@ -147,7 +147,7 @@ export default function BachelorView() {
                 />
                 <p
                   className={cn("flex-1 text-sm font-medium leading-snug", {
-                    "text-gray-800": !quest.completed,
+                    "text-white": !quest.completed,
                     "text-white/30 line-through": quest.completed,
                   })}
                 >
