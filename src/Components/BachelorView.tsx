@@ -27,7 +27,7 @@ export default function BachelorView() {
   // }
 
   return (
-    <main className="flex min-h-screen flex-col items-center bg-[rgb(20,20,20)] px-4 py-8 pb-16">
+    <main className="flex flex-col items-center bg-[rgb(20,20,20)]">
       <div className="mx-auto flex w-full max-w-sm flex-col gap-6">
         {/* ── Header — centered, full width ── */}
         <div className="animate-fade-in pt-2 text-center">
