@@ -27,7 +27,7 @@ export default function BachelorView() {
   // }
 
   return (
-    <main className="no-scrollbar flex flex-col items-center bg-[rgb(20,20,20)] px-2">
+    <main className="no-scrollbar flex flex-col items-center bg-[rgb(20,20,20)] px-4">
       <div className="mx-auto flex w-full max-w-sm flex-col gap-6">
         {/* ── Header — centered, full width ── */}
         <div className="animate-fade-in pt-2 text-center">
@@ -115,7 +115,7 @@ export default function BachelorView() {
           </p>
           <p className="mt-2 text-base font-semibold leading-snug text-white/80">
             Не го гледай, че прилича на{" "}
-            <span className="text-purple-400">плишиво дърво</span>, ако си
+            <span className="text-purple-400">плешиво дърво</span>, ако си
             достатъчно смела заповядай да го:
           </p>
         </div>
