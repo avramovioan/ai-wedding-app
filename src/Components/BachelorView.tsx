@@ -27,7 +27,7 @@ export default function BachelorView() {
   // }
 
   return (
-    <main className="no-scrollbar my-2 flex flex-col items-center bg-[rgb(20,20,20)]">
+    <main className="no-scrollbar flex flex-col items-center bg-[rgb(20,20,20)] px-2">
       <div className="mx-auto flex w-full max-w-sm flex-col gap-6">
         {/* ── Header — centered, full width ── */}
         <div className="animate-fade-in pt-2 text-center">
