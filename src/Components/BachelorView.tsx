@@ -51,13 +51,13 @@ export default function BachelorView() {
           style={{ animationDelay: "0.2s" }}
         >
           {/* Left column */}
-          <div className="flex flex-1 flex-col gap-3 pt-1">
+          <div className="flex flex-1 flex-col gap-3 pt-5">
             {/* Subtitle */}
             <div>
               <p className="text-sm font-bold uppercase tracking-widest text-white">
                 това е ергенското на
               </p>
-              <p className="text-2xl font-extrabold text-purple-600">ПЕШО</p>
+              <p className="text-3xl font-extrabold text-purple-600">ПЕШО</p>
             </div>
 
             {/* Catchphrase */}
@@ -73,7 +73,7 @@ export default function BachelorView() {
           </div>
 
           {/* Photo on the RIGHT — tilted right, pushed down */}
-          <div className="mt-6 flex h-44 w-36 shrink-0 rotate-3 items-center justify-center overflow-hidden rounded-xl border-4 border-purple-600 bg-[rgb(35,15,55)] shadow-[0_0_18px_4px_rgba(147,51,234,0.4)]">
+          <div className="mt-5 flex h-52 w-40 shrink-0 rotate-3 items-center justify-center overflow-hidden rounded-xl border-4 border-purple-600 bg-[rgb(35,15,55)] shadow-[0_0_18px_4px_rgba(147,51,234,0.4)]">
             {!imgError ? (
               <img
                 src={pesho}
